@@ -1,0 +1,13 @@
++++
+client_name = ""
+date = "2016-11-27"
+image = ""
+image_preview = ""
+summary = "Time to Learn is a smartwatch watch face with intelligent reminders for learning things. The idea behind the watch face is based on what in psychology is called micro-learning a very successful learning strategy"
+tags = ["accelerating knowledge acquisition"]
+title = "Time to Learn "
+external_link = ""
+
++++
+
+Softwarenaut is built on top of the Cincom distribution of Smalltalk for historical reasons. This means that in order to run the tool you also need Cincom Smalltalk. There are three ways in which you can install the tool.
