@@ -10,7 +10,7 @@ subtitle = "that I and my students are working on"
 widget = "projects"
 
 # Order that this section will appear in.
-weight = 40
+weight = 30
 
 +++
 

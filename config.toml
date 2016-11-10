@@ -83,18 +83,18 @@ googleAnalytics = ""
 #   The weight parameter defines the order that the links will appear in.
 
 [[menu.main]]
-  name = "Home"
+  name = "About"
   url = "#top"
   weight = 1
 
 [[menu.main]]
-  name = "Publications"
-  url = "#publications"
+  name = "Teaching"
+  url = "#teaching"
   weight = 2
 
 [[menu.main]]
-  name = "Research Areas"
-  url = "#research_areas"
+  name = "Research"
+  url = "#posts"
   weight = 3
 
 [[menu.main]]
@@ -103,9 +103,10 @@ googleAnalytics = ""
   weight = 4
 
 [[menu.main]]
-  name = "Teaching"
-  url = "#teaching"
+  name = "Publications"
+  url = "#publications"
   weight = 5
+
 
 [[menu.main]]
   name = "Contact"
