@@ -24,7 +24,7 @@ And now for the challenge: can you spot me in the picture?
 """
 +++
 
-I have been nominated for the teacher of the year award. 
+I have been nominated for the teacher of the year award.
 I consider this an honor that I do not deserve, especially
 seeing all the other nominations. I blame it on the second 
 year students who do not know better. 
