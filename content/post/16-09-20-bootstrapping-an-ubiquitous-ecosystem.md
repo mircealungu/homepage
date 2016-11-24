@@ -8,7 +8,7 @@ summary = """
 
 This is the first paper that reports on the opportunities and challenges of bootstrapping an ecosystem from academia. One of the reviewers says:
 
->[...] an unconventional idea for an ecosystem, which shows well that there are many more opportunities to benefit from the ecosystem idea, than the various industrial applications. The concrete examples of the platform and the applications make the ideas tangible and well understandable. I particularly like the discussions of the lessons learned [...]
+> An unconventional idea for an ecosystem, which shows well that there are many more opportunities to benefit from the ecosystem idea, than the various industrial applications. The concrete examples of the platform and the applications make the ideas tangible and well understandable. I particularly like the discussions of the lessons learned [...]
 
 The paper ([preprint online](https://github.com/mircealungu/Bootstrapping_an_Ecosystem__WEA16/blob/master/preprint.pdf)) was accepted for presentation at WEA (Workshop on Ecosystem Architectures). WEA will take place in Copenhagen and is colocated with ECSA. 
 
