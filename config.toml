@@ -18,7 +18,7 @@ googleAnalytics = ""
   organization = "University of Groningen"
   avatar = "presenting.png"
   email = "m.f.lungu@rug.nl"
-  address = "Nijenborgh 9, Groningen"
+  address = "Office 590, Nijenborgh 9, Groningen"
 
   # Enable Keybase in Contact section by entering your keybase.io username.
   keybase = "mircea"
@@ -87,24 +87,23 @@ googleAnalytics = ""
   url = "#top"
   weight = 1
 
+
+[[menu.main]]
+  name = "Academic Log"
+  url = "#posts"
+  weight = 2
+
+
 [[menu.main]]
   name = "Teaching"
   url = "#teaching"
-  weight = 2
-
-[[menu.main]]
-  name = "Research"
-  url = "#posts"
   weight = 3
 
-[[menu.main]]
-  name = "Projects"
-  url = "#projects"
-  weight = 4
+
 
 [[menu.main]]
   name = "Publications"
-  url = "#publications"
+  url = "https://scholar.google.nl/citations?user=kLqXicUAAAAJ&hl=en"
   weight = 5
 
 
