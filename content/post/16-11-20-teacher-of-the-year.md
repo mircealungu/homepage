@@ -7,14 +7,16 @@ math = true
 summary = """
 I have been nominated for the teacher of the year award. 
 I consider this an honor that I do not deserve, especially
-seeing all the other nominations. I blame it on the second 
-year students who do not know better. 
+seeing all the other nominations. Blame it on the second 
+year students who do not know better.
 
-It is true though, that the students enjoyed their projects
-and I think learned a lot in the process. Thus the majority 
+However, it is also true that we put a lot of effort in running the
+projects and coming up with cool project ideas. The students 
+enjoyed the team work and learned a lot in the process. 
+Thus the majority 
 of the merit goes to me TAs who helped run the projects: 
 Laura, Jelle, Georgios, Jeroen, Angelo, 
-Alexander, Sybren. Good job team!
+Alexander, Sybren. Congratulations!!
 
 
 <!-- 
@@ -24,10 +26,10 @@ And now for the challenge: can you spot me in the picture?
 """
 +++
 
-I have been nominated for the teacher of the year award.
+I have been nominated for the teacher of the year award. 
 I consider this an honor that I do not deserve, especially
-seeing all the other nominations. I blame it on the second 
-year students who do not know better. 
+seeing all the other nominations. Blame it on the second 
+year students who do not know better.
 
 However, I know that the students enjoyed their 
 projects. Thus the majority of the merit goes to me TAs who
