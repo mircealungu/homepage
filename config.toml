@@ -58,10 +58,10 @@ googleAnalytics = ""
   #
   #   Full list: https://jpswalsh.github.io/academicons/
 
-  [[params.social]]
-    icon = "envelope"
-    icon_pack = "fa"
-    link = "mailto:m.f.lungu@rug.nl"
+#  [[params.social]]
+#    icon = "envelope"
+#    icon_pack = "fa"
+#    link = "mailto:m.f.lungu@rug.nl"
 
   [[params.social]]
     icon = "twitter"
