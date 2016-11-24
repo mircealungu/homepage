@@ -1,0 +1,16 @@
++++
+date = "2016-11-16T12:00:00"
+draft = false
+tags = ["Teaching"]
+title = "Introduction to Data Science Course - Kick Off"
+math = true
+summary = """
+Today we are starting our new course on Introduction to Data 
+Science with [Kerstin Bunte](http://www.cs.rug.nl/~kbunte/). 
+This is going to be a very interesting challenge since we have
+60 first year master students from multiple disciplines: 
+computer science, astronomy, and mathematics. What do they have
+in common? What can we talk about that they can all benefit from
+while not being too easy nor too challenging? We'll see!
+"""
++++
