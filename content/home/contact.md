@@ -16,3 +16,8 @@ autolink = true
 
 +++
 
+[ [University Page](http://www.rug.nl/staff/m.f.lungu/) ]
+[ [Personal Blog](http://mir.lu) ]
+
+
+
