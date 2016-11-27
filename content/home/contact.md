@@ -20,6 +20,4 @@ autolink = true
 [ [Personal Blog](http://mir.lu) ]
 [ [Academia](http://rug.academia.edu/MirceaLungu)]
 [ [ResearchGate](https://www.researchgate.net/profile/Mircea_Lungu3/publications)]
-
-
-
+[ [LinkedIn](https://www.linkedin.com/in/mircealungu)]

@@ -89,17 +89,16 @@ googleAnalytics = ""
 
 
 [[menu.main]]
-  name = "Academic Log"
-  url = "#posts"
+  name = "Teaching"
+  url = "#teaching"
   weight = 2
 
 
 [[menu.main]]
-  name = "Teaching"
-  url = "#teaching"
+  name = "Academic Log"
+  url = "#posts"
   weight = 3
-
-
+  
 
 [[menu.main]]
   name = "Publications"
@@ -111,3 +110,4 @@ googleAnalytics = ""
   name = "Contact"
   url = "#contact"
   weight = 6
+

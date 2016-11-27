@@ -10,7 +10,7 @@ subtitle = "All you never wanted to know.<br/>In chronological order!"
 widget = "posts"
 
 # Order that this section will appear in.
-weight = 20
+weight = 30
 
 # Show posts that contain the following tags. Default to any tags.
 tags = []

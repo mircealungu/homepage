@@ -2,21 +2,22 @@
 date = "2016-11-20T12:00:00"
 draft = false
 tags = ["Teaching"]
-title = "Nominated for the Teacher of the Year Award"
+title = "Nominated for the Teacher of the Year Award!"
 math = true
 summary = """
-I have been nominated for the teacher of the year award. 
-I consider this an honor that I do not deserve, especially
-seeing all the other nominations. Blame it on the second 
-year students who do not know better.
+I have been nominated for the teacher of the year award! 
+I consider this an honor that I do not deserve as an individual, 
+especially seeing all the other nominations. However, it is also 
+true that together with my team, we put a lot of effort in 
+  coming up with cool project ideas and 
+  running them
+in the timespan of five months. 
+The (vast majority of the) students reported enjoying team work on real projects and 
+learning a lot in the process. 
 
-However, it is also true that we put a lot of effort in running the
-projects and coming up with cool project ideas. The students 
-enjoyed the team work and learned a lot in the process. 
-Thus the majority 
-of the merit goes to me TAs who helped run the projects: 
+Thus, many thanks and congratulations for my teaching assistants: 
 Laura, Jelle, Georgios, Jeroen, Angelo, 
-Alexander, Sybren. Congratulations!!
+Alexander, Sybren. 
 
 
 <!-- 
@@ -26,15 +27,19 @@ And now for the challenge: can you spot me in the picture?
 """
 +++
 
-I have been nominated for the teacher of the year award. 
-I consider this an honor that I do not deserve, especially
-seeing all the other nominations. Blame it on the second 
-year students who do not know better.
+I have been nominated for the teacher of the year award! 
+I consider this an honor that I do not deserve as an individual, 
+especially seeing all the other nominations. However, it is also 
+true that together with my team, we put a lot of effort in 
+  coming up with cool project ideas and 
+  running them
+in the timespan of five months. 
+The (vast majority of the) students reported enjoying team work on real projects and 
+learning a lot in the process. 
 
-However, I know that the students enjoyed their 
-projects. Thus the majority of the merit goes to me TAs who
-helped run the projects: Laura, Jelle, Georgios, Jeroen, Angelo, 
-Alexander, Sybren. Good job team!
+Thus, many thanks and congratulations for my teaching assistants: 
+Laura, Jelle, Georgios, Jeroen, Angelo, 
+Alexander, Sybren. 
 
 And now for the challenge: can you spot me in the picture? 
 ![lala](/img/teacher.jpg)
