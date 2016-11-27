@@ -18,6 +18,8 @@ autolink = true
 
 [ [University Page](http://www.rug.nl/staff/m.f.lungu/) ]
 [ [Personal Blog](http://mir.lu) ]
+[ [Academia](http://rug.academia.edu/MirceaLungu)]
+[ [ResearchGate](https://www.researchgate.net/profile/Mircea_Lungu3/publications)]
 
 
 
