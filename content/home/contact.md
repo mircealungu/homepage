@@ -5,7 +5,7 @@ date = "2016-04-20T00:00:00"
 draft = false
 
 title = "Contact"
-subtitle = ""
+subtitle = "And Further Web Coordinates"
 widget = "contact"
 
 # Order that this section will appear in.
@@ -18,6 +18,11 @@ autolink = true
 
 [ [University Page](http://www.rug.nl/staff/m.f.lungu/) ]
 [ [Personal Blog](http://mir.lu) ]
+[ [LinkedIn](https://www.linkedin.com/in/mircealungu)]
+
 [ [Academia](http://rug.academia.edu/MirceaLungu)]
 [ [ResearchGate](https://www.researchgate.net/profile/Mircea_Lungu3/publications)]
-[ [LinkedIn](https://www.linkedin.com/in/mircealungu)]
+[ [Google Scholar](https://scholar.google.nl/citations?user=kLqXicUAAAAJ&hl=en)]
+
+
+
