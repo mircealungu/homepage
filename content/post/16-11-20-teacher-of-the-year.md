@@ -16,8 +16,14 @@ The (vast majority of the) students reported enjoying team work on real projects
 learning a lot in the process. 
 
 Thus, many thanks and congratulations for my teaching assistants: 
-Laura, Jelle, Georgios, Jeroen, Angelo, 
-Alexander, Sybren. 
+Laura Baakman, 
+Jeroen Brandsma, 
+Georgios Digkas, 
+Sybren Gjaltema,
+Jelle van Wezel, 
+Angelo Karountzos, 
+Alexander Lukjanenkovs.
+
 
 
 <!-- 
@@ -38,12 +44,19 @@ The (vast majority of the) students reported enjoying team work on real projects
 learning a lot in the process. 
 
 Thus, many thanks and congratulations for my teaching assistants: 
-Laura, Jelle, Georgios, Jeroen, Angelo, 
-Alexander, Sybren. 
-
-And now for the challenge: can you spot me in the picture? 
-![lala](/img/teacher.jpg)
+Laura Baakman, 
+Jeroen Brandsma, 
+Georgios Digkas, 
+Sybren Gjaltema,
+Jelle van Wezel, 
+Angelo Karountzos, 
+Alexander Lukjanenkovs.
 
 I've been long due to write up the lessons learned during 
-the SE courses at RUG. Now I feel the duty to do it even more. 
+the most recent software engineering courses. 
+Now I feel the duty to do it even more. 
 Hopefully before I start the next batch!
+
+And now for the impossible challenge: can you spot me in the picture? 
+![lala](/img/teacher.jpg)
+
