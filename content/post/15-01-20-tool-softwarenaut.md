@@ -134,14 +134,3 @@ Once all your versions are loaded, you are presented with a Model History builde
 After this Softwarenaut builds the internal hierarchical graphs for every version and you are ready to proceed to analysis. The models for all the versions will now know that they are part of the same history.
 
 Multi-Version views will be enabled in the detail view tab. One such example is the Relationship Evolution detail view for dependencies.
-
-
-### The Structure of This Repository
-====
-
-- dist-base: base folder for
-  building the distributions
-for the different OSes.
-
-- dist-scripts: scripts to
-  build the distributions 
