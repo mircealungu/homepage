@@ -6,7 +6,7 @@ title = "Nominated for the Teacher of the Year Award!"
 math = true
 summary = """
 I have been nominated for the teacher of the year award! 
-I consider this an honor that I do not deserve as an individual, 
+I consider this an honor that I do not deserve personally, 
 especially seeing all the other nominations. However, it is also 
 true that together with my team, we put a lot of effort in 
   coming up with cool project ideas and 
@@ -34,7 +34,7 @@ And now for the challenge: can you spot me in the picture?
 +++
 
 I have been nominated for the teacher of the year award! 
-I consider this an honor that I do not deserve as an individual, 
+I consider this an honor that I do not deserve personally, 
 especially seeing all the other nominations. However, it is also 
 true that together with my team, we put a lot of effort in 
   coming up with cool project ideas and 
