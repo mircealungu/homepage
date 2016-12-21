@@ -33,19 +33,21 @@ Can we make maps of information flow in the world today? In the article about St
 
 Indeed StackOverflow has information about how information flows between users in the form of answers to questions. Since a large number of users have provided their geolocation information in their profiles we can build a hierarchical graph of this data and visualize it with Quicksilver. We grabbed thus a public dump of the SO data curated by Alberto Bacchellii and Luca Ponzanelli at the University of Lugano.
 
-With this data we created the following map of the software engineering information flow in the world through the medium of StackOverflow:
-
-[![stackoverflow-full](/img/stackoverflow-full.png)](/img/stackoverflow-full.png)
-
-The map is built using the following conventions:
+With this data we created a map of the software engineering information flow in the world mediated by SO with the following conventions: 
 
 - Countries and continents are represented using treemaps. Their areas are proportional to the aggregated reputation received by their corresponding users (e.g. UK has 10x more reputation than Switzerland)
 - The thickness of an arrow indicating information flow between regions is proportional to the number of answers abstracted in it (e.g. Australia imports three times more information than it exports)
 
-Several observations on this map:
+    
+<div style="margin: 0 -48%; padding: 0 -48%; background-color: red;">
+	<img src="/img/stackoverflow-full.png" />
+</div>
 
-- America and Europe are the main contributors
-- Some small countries like Switzerland or Netherland have disproportionately high reputation
+The most straightforward observations based on this map are:
+
+- EU is exporting more answers to the US
+- US has more reputation than EU
+- Several small countries like Switzerland or Netherland have disproportionately high reputation
 - Africa does not contribute much
 - China is practically absent even if Joel [reports](https://stackoverflow.blog/2011/04/stack-overflow-around-the-world/) large numbers of visitors to the site from there
 
