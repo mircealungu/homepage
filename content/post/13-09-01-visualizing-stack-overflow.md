@@ -11,7 +11,7 @@ summary = """
 <b>"A nobel prize is waiting for the one who visualizes the economy
 of information"</b> (Steward Brand, Inventing the Future at MIT) 
 <br/><br/>
-In this paper we look at StackOverflow as an knowledge economy, a market for software engineering knowledge. We aggregate the knowledge transactions from the level of individual users to the level of geographical regions and learn that Europe beats the US!
+In this paper ([pdf](http://scg.unibe.ch/archive/papers/Sche13a-GeolocatingStackOverflow.pdf), [Bibtex](http://scg.unibe.ch/scgbib?_k=dvvBNH0e&query=Sche13a&display=bibtex)) we look at StackOverflow as an information economy, a market for software engineering knowledge. We aggregate the transactions between individual users to geographical regions and learn that... EU beats the US! 
 </div>
 
 
