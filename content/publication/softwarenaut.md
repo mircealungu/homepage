@@ -3,7 +3,7 @@ abstract = "Architecture recovery is an activity applied to a system whose initi
 
 abstract_short = "We present Softwarenaut -- a tool which supports architecture recovery through interactive exploration and visualization. Classical architecture recovery features, such as filtering and details on demand, are enhanced with evolutionary capabilities when multi-version information about a subject system is available."
 authors = ["Mircea Lungu", "Michele Lanza", "Oscar Nierstrasz"]
-date = "2014"
+date = "2014-10-10"
 image = ""
 image_preview = ""
 math = true
