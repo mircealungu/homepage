@@ -29,14 +29,13 @@ One of my current travelling companions is “The Media Lab – Inventing the Fu
 
 
 ### The Software Engineering Information Flow
-Can we make maps of information flow in the world today? In the article about StackOverflow that we will present at SSE in Saint Petersburg this summer we show that we can at least map components of this information transfer; in our particular case software engineering knowledge.
+Can we make maps of information flow in the world today? In the article about StackOverflow that we will present at SSE in Saint Petersburg this summer we show that we can.
 
-The StackOverflow database, of which dumps are publicly available, contains information about how knowledge is transferred between users in the form of questions and answers. Since a large number of users have provided their geolocation information in their profiles we can build a hierarchical graph of this data and visualize it with Quicksilver. We grabbed a public dump of the SO data curated by Alberto Bacchellii and Luca Ponzanelli at the University of Lugano.
+Indeed StackOverflow has information about how information flows between users in the form of answers to questions. Since a large number of users have provided their geolocation information in their profiles we can build a hierarchical graph of this data and visualize it with Quicksilver. We grabbed thus a public dump of the SO data curated by Alberto Bacchellii and Luca Ponzanelli at the University of Lugano.
 
-With this data we created the map of the flow of knowledge in the world through StackOverflow as a medium.
+With this data we created the following map of the software engineering information flow in the world through the medium of StackOverflow:
 
-![stackoverflow-full](/img/stackoverflow-full.png)
-
+[![stackoverflow-full](/img/stackoverflow-full.png)](/img/stackoverflow-full.png)
 
 The map is built using the following conventions:
 
