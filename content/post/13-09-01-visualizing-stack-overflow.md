@@ -41,18 +41,18 @@ With this data we created the map of the flow of knowledge in the world through 
 The map is built using the following conventions:
 
 - Countries and continents are represented using treemaps. Their areas are proportional to the aggregated reputation received by their corresponding users (e.g. UK has 10x more reputation than Switzerland)
-- The arrows indicate the flow of information between continents. The thickness of an arrow is proportional to the number of answers (e.g. Australia imports three times more information than it exports)
+- The thickness of an arrow indicating information flow between regions is proportional to the number of answers abstracted in it (e.g. Australia imports three times more information than it exports)
 
 Several observations on this map:
 
 - America and Europe are the main contributors
-- Small countries like Switzerland or Sweden have disproportionately high reputation
-- China is almost invisible even if Joel [reports](https://stackoverflow.blog/2011/04/stack-overflow-around-the-world/) a large number of visits from China.
+- Some small countries like Switzerland or Netherland have disproportionately high reputation
 - Africa does not contribute much
+- China is practically absent even if Joel [reports](https://stackoverflow.blog/2011/04/stack-overflow-around-the-world/) large numbers of visitors to the site from there
 
 The map is taken from our paper ([pdf](http://scg.unibe.ch/archive/papers/Sche13a-GeolocatingStackOverflow.pdf), [Bibtex](http://scg.unibe.ch/scgbib?_k=dvvBNH0e&query=Sche13a&display=bibtex)) which contains more details about the data collection and analysis (including details on geo-locating users, and the evolution over time of the data). 
 
-If you read it we would love to get your feedback in the comments section of this blog entry.
+If you read it we would love to get your feedback.
 
 In the meantime think about the following questions:
 
