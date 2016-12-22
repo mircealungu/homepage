@@ -2,12 +2,11 @@
 date = "2016-11-20T12:00:00"
 draft = false
 tags = ["Teaching"]
-title = "Nominated for the Teacher of the Year Award!"
+title = "🎉 Nominated for the Teacher of the Year Award"
 math = true
 summary = """
 """
 +++
-
 I have been nominated for the teacher of the year award! 
 I consider this an honor that I do not deserve personally, 
 especially seeing all the other nominations. However, it is also 

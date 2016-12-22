@@ -2,7 +2,7 @@
 date = "2013-11-20T12:00:00"
 draft = false
 tags = ["Papers", "Ecosystems"]
-title = "Mapping the Open Information Economy @ SSE'13"
+title = "Mapping the Open Information Economy 📝SSE'13"
 math = true
 summary = """
 

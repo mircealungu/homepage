@@ -2,7 +2,7 @@
 date = "2016-11-16T12:00:00"
 draft = false
 tags = ["Teaching"]
-title = "Introduction to Data Science Course - Kick Off"
+title = "New Course: Introduction to Data Science"
 math = true
 summary = """
 """

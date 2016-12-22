@@ -2,7 +2,7 @@
 date = "2016-09-20T12:00:00"
 draft = false
 tags = ["Papers", "Ecosystems"]
-title = "Paper: Bootstrapping an Ubiquitous Ecosystem @ WEA'16"
+title = "Bootstrapping an Ubiquitous Ecosystem 📝WEA'16"
 math = true
 summary = """
 
