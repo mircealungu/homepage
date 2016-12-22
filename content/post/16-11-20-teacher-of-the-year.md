@@ -5,31 +5,6 @@ tags = ["Teaching"]
 title = "Nominated for the Teacher of the Year Award!"
 math = true
 summary = """
-I have been nominated for the teacher of the year award! 
-I consider this an honor that I do not deserve personally, 
-especially seeing all the other nominations. However, it is also 
-true that together with my team, we put a lot of effort in 
-  coming up with cool project ideas and 
-  running them
-in the timespan of five months. 
-The (vast majority of the) students reported enjoying team work on real projects and 
-learning a lot in the process. 
-
-Thus, many thanks and congratulations for my teaching assistants: 
-Laura Baakman, 
-Jeroen Brandsma, 
-Georgios Digkas, 
-Sybren Gjaltema,
-Jelle van Wezel, 
-Angelo Karountzos, 
-Alexander Lukjanenkovs.
-
-
-
-<!-- 
-And now for the challenge: can you spot me in the picture? 
-![lala](/img/teacher.jpg) -->
-
 """
 +++
 
@@ -40,8 +15,6 @@ true that together with my team, we put a lot of effort in
   coming up with cool project ideas and 
   running them
 in the timespan of five months. 
-The (vast majority of the) students reported enjoying team work on real projects and 
-learning a lot in the process. 
 
 Thus, many thanks and congratulations for my teaching assistants: 
 Laura Baakman, 
