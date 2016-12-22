@@ -33,7 +33,7 @@ Can we make maps of information flow in the world today? In the article about St
 
 StackOverflow is the principal website for programmers to ask technical questions. The quality of the answers and the fact that the mean time to a question being answered is eleven minutes make it the *de facto* market for information regarding software engineering. In this virtual economy in exchange for information one receives *reputation points* from the askers of the question and those who found the answer useful.
 
-Based on the geolocation information provided by the users in their profile pages we created a map that shows how software engineering information flows around the world. 
+Based on the geolocation information provided by the users in their profile pages and the almost ten million questions and answers published as a database dump provided by A. Bacchelli at U. Lugano we created a map that shows how software engineering information flows around the world. 
 
     
 <div style="margin: 0 -48%; padding: 0 -48%;">
@@ -59,6 +59,7 @@ The map is taken from our paper ([pdf](http://scg.unibe.ch/archive/papers/Sche13
 Is the map representative of the way programming information is spread around the world? Are there other similar maps that you are aware of? 
 
 If you want to talk more about this topic <a href="/#contact"> let me know</a>.
+
 
 
 
