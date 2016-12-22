@@ -28,36 +28,37 @@ One of my current travelling companions is “The Media Lab – Inventing the Fu
 > “I have wanted for some time to find a map of information flows around the world. The other day I had one hour to kill between appointments in new york city, so I dropped into the Rand-McNally shop to ask for such a map. My request created quite a stir, and virtually every employee was called into consultation. They brought out all sorts of maps showing flows of food and feedgrains, oil and coal, weapons and manufacturers – but finally admitted that they had no map of information flows and didn’t think their competitors had one either.” (Steward Brand, Inventing the Future at MIT, pp. 245)
 
 
-### The Software Engineering Information Flow
+### Software Engineering Information Flow Around the World
 Can we make maps of information flow in the world today? In the article about StackOverflow that we will present at SSE in Saint Petersburg this summer we show that we can.
 
-Indeed StackOverflow has information about how information flows between users in the form of answers to questions. Since a large number of users have provided their geolocation information in their profiles we can build a hierarchical graph of this data and visualize it with Quicksilver. We grabbed thus a public dump of the SO data curated by Alberto Bacchellii and Luca Ponzanelli at the University of Lugano.
+StackOverflow is the principal website for programmers to ask technical questions. The quality of the answers and the fact that the mean time to a question being answered is eleven minutes make it the *de facto* market for information regarding software engineering. In this virtual economy in exchange for information one receives *reputation points* from the askers of the question and those who found the answer useful.
 
-With this data we created a map of the software engineering information flow in the world mediated by SO with the following conventions: 
-
-- Countries and continents are represented using treemaps. Their areas are proportional to the aggregated reputation received by their corresponding users (e.g. UK has 10x more reputation than Switzerland)
-- The thickness of an arrow indicating information flow between regions is proportional to the number of answers abstracted in it (e.g. Australia imports three times more information than it exports)
+Based on the geolocation information provided by the users in their profile pages we created a map that shows how software engineering information flows around the world. 
 
     
 <div style="margin: 0 -48%; padding: 0 -48%; background-color: red;">
 	<img src="/img/stackoverflow-full.png" />
 </div>
 
+The map is visualized using the following conventions: 
+
+- The areas of countries and continents is proportional to the reputation of their users
+- The thickness of an arrow indicating information flow between regions is proportional to the number of answers abstracted in it
+
+
 The most straightforward observations based on this map are:
 
 - EU is exporting more answers to the US
 - US has more reputation than EU
-- Several small countries like Switzerland or Netherland have disproportionately high reputation
-- Africa does not contribute much
+- Several small countries like Switzerland or Netherland have surprisingly high reputation with respect to their population
 - China is practically absent even if Joel [reports](https://stackoverflow.blog/2011/04/stack-overflow-around-the-world/) large numbers of visitors to the site from there
+- Africa does not contribute much
+
+Looking at the map I wonder whether it is representative of the way computing knowledge is distributed in the world. 
 
 The map is taken from our paper ([pdf](http://scg.unibe.ch/archive/papers/Sche13a-GeolocatingStackOverflow.pdf), [Bibtex](http://scg.unibe.ch/scgbib?_k=dvvBNH0e&query=Sche13a&display=bibtex)) which contains more details about the data collection and analysis (including details on geo-locating users, and the evolution over time of the data). 
 
-If you read it we would love to get your feedback.
+If you read it we would love to get your feedback!
 
-In the meantime think about the following questions:
-
-- Could the SO Knowledge Flow map be representative of the way computing knowledge is distributed in the world? What does it say about our world?
-- Could the fact that SO is in English be the main reason for US and UK to be so much ahead of the other countries in terms of reputation?
 
 
