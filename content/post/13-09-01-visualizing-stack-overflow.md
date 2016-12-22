@@ -54,11 +54,11 @@ The most straightforward observations based on this map are:
 - China is practically absent even if Joel [reports](https://stackoverflow.blog/2011/04/stack-overflow-around-the-world/) large numbers of visitors to the site from there
 - Africa does not contribute much
 
-Looking at the map I wonder whether it is representative of the way computing knowledge is distributed in the world. 
-
 The map is taken from our paper ([pdf](http://scg.unibe.ch/archive/papers/Sche13a-GeolocatingStackOverflow.pdf), [Bibtex](http://scg.unibe.ch/scgbib?_k=dvvBNH0e&query=Sche13a&display=bibtex)) which contains more details about the data collection and analysis (including details on geo-locating users, and the evolution over time of the data). 
 
-If you read it we would love to get your feedback!
+Is the map representative of the way programming information is spread around the world? Are there other similar maps that you are aware of? 
+
+If you want to talk more about this topic <a href="/#contact"> let me know</a>.
 
 
 
