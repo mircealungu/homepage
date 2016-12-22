@@ -36,7 +36,7 @@ StackOverflow is the principal website for programmers to ask technical question
 Based on the geolocation information provided by the users in their profile pages we created a map that shows how software engineering information flows around the world. 
 
     
-<div style="margin: 0 -48%; padding: 0 -48%; background-color: red;">
+<div style="margin: 0 -48%; padding: 0 -48%;">
 	<img src="/img/stackoverflow-full.png" />
 </div>
 
