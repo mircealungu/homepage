@@ -29,7 +29,7 @@ One of my current travelling companions is “The Media Lab – Inventing the Fu
 
 
 ### Software Engineering Information Flow Around the World
-Can we make maps of information flow in the world today? In the article that we will present at SSE in Saint Petersburg this summer we show how can we do it for software engineering.
+Can we make maps of information flow in the world today? Yes we can! In the article that we will present at SSE in Saint Petersburg this summer we show how can we do it for software engineering.
 
 StackOverflow is the principal website for software engineers in search for answers to programming questions. The quality of the answers and the fact that the mean time to a question being answered is 11 minutes make it the *de facto* market for information regarding programming. In this virtual economy in exchange for information one receives *reputation points* from the askers of the question and those who found the answer useful.
 
