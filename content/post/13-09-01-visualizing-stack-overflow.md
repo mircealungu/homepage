@@ -2,12 +2,11 @@
 date = "2013-11-20T12:00:00"
 draft = false
 tags = ["Papers", "Ecosystems"]
-title = "Mapping the Open Information Economy 📝SSE'13"
+title = "Mapping the Open Information Economy 📝"
 math = true
 summary = """
 
 <img src=/img/stackoverflow-small.png style="box-shadow:none; float: left; width:192px; padding: 10px; padding-top:0px; margin-top: 0px; margin-left: 0px; padding-left: 0px; margin-bottom: 0px; border-width: 0px;" />
-<div style="overflow:hidden; width: auto;">
 <b>"A nobel prize is waiting for the one who visualizes the economy
 of information"</b> (Steward Brand, Inventing the Future at MIT) 
 <br/><br/>

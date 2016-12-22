@@ -2,13 +2,15 @@
 date = "2016-09-20T12:00:00"
 draft = false
 tags = ["Papers", "Ecosystems"]
-title = "Bootstrapping an Ubiquitous Ecosystem 📝WEA'16"
+title = "Bootstrapping an Ecosystem 📝"
 math = true
 summary = """
 
-> "An unconventional idea for an ecosystem, which shows well that there are many more opportunities to benefit from the ecosystem idea, than the various industrial applications. The concrete examples of the platform and the applications make the ideas tangible and well understandable. I particularly like the discussions of the lessons learned [...]" (a reviewer for the paper :) 
+My favorite reviewer for this paper says: 
 
-The paper reports on some of the opportunities and challenges of bootstrapping a ubiquitous monitoring ecosystem for learning from academia. The preprint is [online](https://github.com/mircealungu/Bootstrapping_an_Ecosystem__WEA16/blob/master/preprint.pdf). 
+> "An unconventional idea for an ecosystem, which shows well that there are many more opportunities to benefit from the ecosystem idea, than the various industrial applications. The concrete examples of the platform and the applications make the ideas tangible and well understandable. I particularly like the discussions of the lessons learned" 
+
+Published in the WEA'16 workshop the paper ([pdf](https://github.com/mircealungu/Bootstrapping_an_Ecosystem__WEA16/blob/master/preprint.pdf)) reports on some of the opportunities and challenges of bootstrapping a ubiquitous monitoring ecosystem. As a case study I report on my experience with the [Zeeguu](https://zeeguu.unibe.ch) ecosystem.
 
 """
 +++
