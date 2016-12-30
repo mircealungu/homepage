@@ -8,10 +8,13 @@ summary = """
 """
 +++
 
-Today we are starting our new course on Introduction to Data 
-Science with [Kerstin Bunte](http://www.cs.rug.nl/~kbunte/). 
-This is going to be a very interesting challenge since we have
-60 first year master students from multiple disciplines: 
-computer science, astronomy, and mathematics. What do they have
-in common? What can we talk about that they can all benefit from
-while not being too easy nor too challenging? We'll see!
+Today, with [Kerstin Bunte](http://www.cs.rug.nl/~kbunte/), 
+we are starting our new course on Introduction to Data Science. 
+This will be interesting: 
+we have 60 first year master students from 
+  computer science, 
+  astronomy, and 
+  mathematics. 
+What do they have
+in common? What topics can we cover such that most of them can 
+benefit? Which topics are not too easy nor too challenging? We'll see!

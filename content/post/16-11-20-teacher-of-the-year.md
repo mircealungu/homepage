@@ -8,8 +8,8 @@ summary = """
 """
 +++
 I have been nominated for the teacher of the year award! 
-I consider this an honor that I do not deserve personally, 
-especially seeing all the other nominations. However, it is also 
+Especially after seeing all the other nominations I started
+feeling like I don't deserve the honor. However, it is also 
 true that together with my team, we put a lot of effort in 
   coming up with cool project ideas and 
   running them
