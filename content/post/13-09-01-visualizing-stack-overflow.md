@@ -34,30 +34,33 @@ StackOverflow is the principal website for software engineers in search for answ
 
 In the StackOverflow information market the currency is *reputation points*. The reputation points are offered by the user originating a question to the one that best answers it. Others who found the answer useful can provide further points by upvoting the answer later.
 
+As data source for our map we use ten million questions and answers (published as a database dump by A. Bacchelli at U. Lugano). Among other things the data source contains also geolocation information for a large percentage of the the users. Thus, if we aggregate the exchanges of information to geographical regions we will obtain a map.
+
+### How to *visualize* the map?
+
+Inspired from our earlier work on 
+    [visualizing software](/post/14-01-01-evolutionary-and-collaborative-software-architecture-recovery/) 
+we used the following conventions for visualizing our information map: 
+
+- The areas of countries and continents is proportional to the reputation of their users
+- The thickness of an arrow indicating information flow (answers) between regions is proportional to the number of answers abstracted in it
+- Where we had sufficient space, we labelled countries with their corresponding flags
+
 This map of software engineering information flow in the paper looks like the figure below:
     
 <div style="margin: 0 -48%; padding: 0 -48%;">
 	<img src="/img/stackoverflow-full.png" />
 </div>
 
-### How was the map built?
-
-The data source for the map is the ten million questions and answers published as a database dump provided by A. Bacchelli at U. Lugano. The database contains also geolocation information provided by the users in their profile pages.
-
-The map is visualized using the following conventions: 
-
-- The areas of countries and continents is proportional to the reputation of their users
-- The thickness of an arrow indicating information flow (answers) between regions is proportional to the number of answers abstracted in it
-
 
 ### What can we learn? 
 
 The most straightforward observations based on this map are:
 
-- EU is exporting more answers to the US
-- US has more reputation than EU
-- Several small countries like Switzerland or Netherland have surprisingly high reputation with respect to their population
-- China is practically absent even if Joel [reports](https://stackoverflow.blog/2011/04/stack-overflow-around-the-world/) large numbers of visitors to the site from there
+- EU is exporting more answers to the US than the other way around!
+- However, US has more reputation than EU
+- Several small countries like Switzerland or Netherland have disproportionately high reputation with respect to their population
+- China is practically absent even if Joel Spolsky (the founder of SO) [reports](https://stackoverflow.blog/2011/04/stack-overflow-around-the-world/) large numbers of visitors to the site from there
 - Africa does not contribute much
 
 ### What next?
