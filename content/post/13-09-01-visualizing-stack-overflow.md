@@ -7,10 +7,12 @@ math = true
 summary = """
 
 <img src=/img/stackoverflow-small.png style="box-shadow:none; float: left; width:192px; padding: 10px; padding-top:0px; margin-top: 0px; margin-left: 0px; padding-left: 0px; margin-bottom: 0px; border-width: 0px;" />
+<small>
 <b>"A nobel prize is waiting for the one who visualizes the economy
-of information"</b> (Steward Brand, Inventing the Future at MIT) 
+of information"</b> (Steward Brand, The Media Lab) 
 <br/><br/>
-In this paper ([pdf](http://scg.unibe.ch/archive/papers/Sche13a-GeolocatingStackOverflow.pdf), [Bibtex](http://scg.unibe.ch/scgbib?_k=dvvBNH0e&query=Sche13a&display=bibtex)) we look at StackOverflow as an information economy, a market for software engineering knowledge. We aggregate the transactions between individual users to geographical regions and learn that... EU beats the US! 
+</small>
+In this paper ([pdf](http://scg.unibe.ch/archive/papers/Sche13a-GeolocatingStackOverflow.pdf), [Bibtex](http://scg.unibe.ch/scgbib?_k=dvvBNH0e&query=Sche13a&display=bibtex)) we look at StackOverflow as an exchange market for software engineering knowledge. We learn among others that EU has more answers than the US but then, on the other hand, US has more reputation.
 </div>
 
 
