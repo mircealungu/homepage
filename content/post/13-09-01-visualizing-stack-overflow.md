@@ -1,7 +1,7 @@
 +++
 date = "2013-11-20T12:00:00"
 draft = false
-tags = ["Papers", "Ecosystems"]
+tags = ["Papers", "Ecosystems", "Student Projects"]
 title = "Mapping the Open Information Economy 📝"
 math = true
 summary = """
@@ -27,23 +27,30 @@ One of my current travelling companions is “The Media Lab – Inventing the Fu
 > “I have wanted for some time to find a map of information flows around the world. The other day I had one hour to kill between appointments in new york city, so I dropped into the Rand-McNally shop to ask for such a map. My request created quite a stir, and virtually every employee was called into consultation. They brought out all sorts of maps showing flows of food and feedgrains, oil and coal, weapons and manufacturers – but finally admitted that they had no map of information flows and didn’t think their competitors had one either.” (Steward Brand, Inventing the Future at MIT, pp. 245)
 
 
-### Software Engineering Information Flow Around the World
-Can we make maps of information flow in the world today? Yes we can! In the article that we will present at SSE in Saint Petersburg this summer we show how can we do it for software engineering.
+### Can we make a map of information flow in the world today?
+Yes we can! In the article that we will present at SSE in Saint Petersburg this summer we show how can we do it for software engineering based on StackOverflow data.
 
-StackOverflow is the principal website for software engineers in search for answers to programming questions. The quality of the answers and the fact that the mean time to a question being answered is 11 minutes make it the *de facto* market for information regarding programming. In this virtual economy in exchange for information one receives *reputation points* from the askers of the question and those who found the answer useful.
+StackOverflow is the principal website for software engineers in search for answers to programming questions. The quality of the answers and the fact that the mean time to a question being answered is 11 minutes make it the *de facto market for information* regarding programming. 
 
-Based on the geolocation information provided by the users in their profile pages and the almost ten million questions and answers published as a database dump provided by A. Bacchelli at U. Lugano we created a map that shows how software engineering information flows around the world. 
+In the StackOverflow information market the currency is *reputation points*. The reputation points are offered by the user originating a question to the one that best answers it. Others who found the answer useful can provide further points by upvoting the answer later.
 
+This map of software engineering information flow in the paper looks like the figure below:
     
 <div style="margin: 0 -48%; padding: 0 -48%;">
 	<img src="/img/stackoverflow-full.png" />
 </div>
 
+### How was the map built?
+
+The data source for the map is the ten million questions and answers published as a database dump provided by A. Bacchelli at U. Lugano. The database contains also geolocation information provided by the users in their profile pages.
+
 The map is visualized using the following conventions: 
 
 - The areas of countries and continents is proportional to the reputation of their users
-- The thickness of an arrow indicating information flow between regions is proportional to the number of answers abstracted in it
+- The thickness of an arrow indicating information flow (answers) between regions is proportional to the number of answers abstracted in it
 
+
+### What can we learn? 
 
 The most straightforward observations based on this map are:
 
@@ -53,12 +60,15 @@ The most straightforward observations based on this map are:
 - China is practically absent even if Joel [reports](https://stackoverflow.blog/2011/04/stack-overflow-around-the-world/) large numbers of visitors to the site from there
 - Africa does not contribute much
 
+### What next?
 The map is taken from our paper ([pdf](http://scg.unibe.ch/archive/papers/Sche13a-GeolocatingStackOverflow.pdf), [Bibtex](http://scg.unibe.ch/scgbib?_k=dvvBNH0e&query=Sche13a&display=bibtex)) which contains more details about the data collection and analysis (including details on geo-locating users, and the evolution over time of the data). 
 
 Is the map representative of the way programming information is spread around the world? Are there other similar maps that you are aware of? 
 
 If you want to talk more about this topic <a href="/#contact"> let me know</a>.
 
+### Possible Student Project
+There are a few very nice ways in which this work could be continued. A student interested in working on this topic for a thesis should <a href="/#contact"> contact me</a>.
 
 
 
