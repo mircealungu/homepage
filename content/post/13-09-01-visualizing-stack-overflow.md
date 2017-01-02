@@ -22,7 +22,7 @@ In this paper ([pdf](http://scg.unibe.ch/archive/papers/Sche13a-GeolocatingStack
 ![visualizing-stack-overflow](/img/stackoverflow.png)
 
 <b>"A nobel prize is waiting for the one who visualizes the economy
-of information"</b> (Steward Brand, Inventing the Future at MIT) 
+of information"</b> (Steward Brand, The Media Lab) 
 
 One of my current travelling companions is “The Media Lab – Inventing the Future at MIT” by Steward Brand. Like several other books about the history of computing in the 80s, this one is also fascinating and it shows again how much ahead of their time were people in those years… and how we are still reaping the ideas that they saw. The book reports on an anecdote by Harlan Cleveland :
 
