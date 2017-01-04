@@ -9,14 +9,8 @@ summary = """
 Our work on Softwarenaut has finally been published in the Science 
 of Computer Programming. The paper 
 ([pdf](http://scg.unibe.ch/archive/papers/Lung14a.pdf), [bibtex](http://scg.unibe.ch/scgbib?query=lung14a&display=bibtex),[citations](https://scholar.google.nl/scholar?cites=16074008290934254937&as_sdt=2005&sciodt=0,5&hl=en)) 
-is summarized
-with the following highlights:
-
-➡ Softwarenaut is a visual, interactive architecture recovery tool which 
-➡ leverages evolution to support advanced filters and detailed views and 
-➡ enables sharing architectural views through an online view repository. 
-➡ We illustrate the functionality of Softwarenaut through examples of its application. 
-➡ We discuss architectural and tool-building aspects, and report on a usability study.
+introduces Softwarenaut, a visual, interactive architecture recovery tool which 
+leverages evolutionary analysis to support source code understanding. 
 """
 +++
 
@@ -35,7 +29,7 @@ This page contains a tutorial-like description of the tool. For a more detailed 
 ([pdf](http://scg.unibe.ch/archive/papers/Lung14a.pdf), [bibtex](http://scg.unibe.ch/scgbib?query=lung14a&display=bibtex),[citations](https://scholar.google.nl/scholar?cites=16074008290934254937&as_sdt=2005&sciodt=0,5&hl=en)) 
 
 
-### Aggregating low-level relations along a hierarcical decomposition of a system
+### Aggregating low-level relations along a hierarchical decomposition of a system
 Softwarenaut aggregates low-level relations along a hierarcical decomposition of a system (e.g. the package structure in Java). Softwarenaut can thus present a high-level overview of the architectural relationships between the modules in a system. 
 
 The figure presents the architecture of Softwarenaut visualized in Softwarenaut. The module sizes are proportional to their LOC and the relationships are proportional to the number of low-level relationships abstracted.
