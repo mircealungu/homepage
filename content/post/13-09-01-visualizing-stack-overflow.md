@@ -13,7 +13,6 @@ of information"</b> (Steward Brand, The Media Lab)
 <br/><br/>
 </small>
 In this paper ([pdf](http://scg.unibe.ch/archive/papers/Sche13a-GeolocatingStackOverflow.pdf), [Bibtex](http://scg.unibe.ch/scgbib?_k=dvvBNH0e&query=Sche13a&display=bibtex)) we look at StackOverflow as an exchange market for software engineering knowledge. We learn among others that EU has more answers than the US but then, on the other hand, US has more reputation.
-</div>
 
 
 """
