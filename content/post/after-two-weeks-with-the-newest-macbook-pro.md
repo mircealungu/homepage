@@ -23,6 +23,10 @@ this just feels
 between the laptop and mobile phone is cool. being able
 to plug the laptop on either side is wonderful. 
 
+you could see yourself loving maybe
+- when you select text in a pdf the touch bar allows 
+you to select 
+
 indiferent
 - the touchbar - i found no use for it yet. so i've 
 - the dynamic one sucks because it is changing too 
@@ -35,3 +39,11 @@ caps-lock key to esc, and in a few days it becomes
 second nature. good by esc key. i predict you'll be
 reincarnated in a wider key in the next generations 
 of keyboards.
+- raw processor speed. based on my own fibonacci benchmark
+the two machines are completely equal in speed. sure, this
+benchmark does not test the memory, nor does it test the 
+disk. and even if everything would be the same, the fact
+that the new machine is so much slimmer, it's clearly an 
+upgrade. or?
+- up / down keys don't really work.
+
