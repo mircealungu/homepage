@@ -92,5 +92,5 @@ For details and case studies, see
 ### Code and Installation
 
 The [Softwarenaut GitHub repo](https://github.com/mircealungu/Softwarenaut/) contains instructions on how to [obtain the code 
-and install the system](https://github.com/mircealungu/Softwarenaut/blob/master/INSTALLATION.md).
+and install the system](https://github.com/mircealungu/Softwarenaut/blob/master/INSTALL.md).
 
