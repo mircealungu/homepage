@@ -88,22 +88,24 @@ To cite the article, use the following bibtex:
 
 # Installation
 
-Softwarenaut is built on top of the Cincom distribution of Smalltalk for historical reasons. This means that in order to run the tool you also need Cincom Smalltalk. 
+Softwarenaut is built on top of [Cincom VisualWorks](http://www.cincomsmalltalk.com/) a of which, a Personal Use Licensed version you can [download](http://www.cincomsmalltalk.com/main/developer-community/trying-cincom-smalltalk/try-cincom-smalltalk/) from the Cincom website. 
 
-To download the source code you need to have an installation of Cincom VisualWorks. It seems that recently the only way you can do that is by ordering a CD from Cincom. They are very quick in sending it, but it is still a nuissance and a very archaic way of distributing software! Once you have your VisualWorks installed you are ready to download the sources.
+Once you start VisualWorks: 
 
-Connecting to the Bern Store
+- Select the System->Settings and make sure that 
+-- under the System settings you have the VisualWorks home directory set correctly to the place where you installed VW
+-- under the Store>Prerequisites you have Load latest version option selected (if you don't do this, you'll have to do about 15 extra selections of package versions as you're loading the code. and you don't want that, do you?)
 
-In the Store menu of the launcher, choose ’Connect to Repository’. A dialog pops up where you have to fill in information for connecting to a Store database. Provide the following information:
+- Select the menu option Store->Connect to repository... then punch in the following information to connect to the Bern Store: 
 
-Interface: select PostgreSql from the dropdown box
-Environment: db.iam.unibe.ch:5432_scgStore
-User Name: storeguest (if you have one, use it)
-Password: storeguest (if you have one, use it)
+  -- Environment: db.iam.unibe.ch:5432_scgStore
+  -- Username: storeguest (or your bern store username) 
+  -- Password: storeguest (or your bern store password)
 
-To access the SCG Store do the following: in the Store menu of the launcher: Store -> Published Items.
+- Select the "Connect" button
+- Select the menu option Store->Published Items which now should be enabled. 
+- Find in the Bundles and Packages list the one named SoftwarenautDevelopment. Select it. In the list of versions on the right select Load from the contextual of the most recent version. As the code is loading you might get some Unloadable Definitions warnings. Don't worry and don't despair. Just wait. 
 
-Once there, load the MetaDBDevelopment bundle followed by the SoftwarenautDevelopment bundle. Every time you are asked to select a prerequisite, select the latest version that is available. (You can avoid clicking through a zillion of Ok's if you go to Settings>Store>Prerequisites and select the "Load latest version..." option.)
 
 ### Importing a System
 
