@@ -14,5 +14,5 @@ summary = """
 <div  style="clear:both;"></div>
 <small>
 </small>
-I was invited to give a keynote at Smalltalks in Argentina. Before the conference I spent some time with students at the University of Buenos Aires with Gabriela Arevallo and the other organizers of the conference. The conference was great as the argentinian Smalltalk community is extremely welcoming and passionate. We also enjoyed some great dinners!
+I was invited to give a keynote at Smalltalks in Argentina. Before the conference I spent some time with students at the University of Buenos Aires with Gabriela Arevallo and the other organizers of the conference. The conference was great. The argentinian Smalltalk community is extremely welcoming and passionate. I look forward to going back one day.
 </div>
