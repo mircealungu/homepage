@@ -47,3 +47,10 @@ that the new machine is so much slimmer, it's clearly an
 upgrade. or?
 - up / down keys don't really work.
 
+annoying
+- somebody decided to use the haptic feedback of the mousepad
+every time an image hits a 
+https://discussions.apple.com/thread/7294027?start=0&tstart=0
+
+
+

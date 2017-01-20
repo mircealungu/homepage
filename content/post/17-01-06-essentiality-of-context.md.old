@@ -1,8 +1,8 @@
 +++
 date = "2017-01-06T12:00:00"
-draft = true
+draft = false
 tags = []
-title = "The Essentiality of Context in Software Analytics"
+title = "Three Types of Context in Software Analytics"
 math = true
 summary = """
 
@@ -10,21 +10,9 @@ summary = """
 """
 +++
 
-I am preparing a talk for the SE symposium. 
-This is the yearly meeting of the SE researchers 
-in the Netherlands. Since this is one of the first
-times that I get the chance to talk in front of the 
-community, I'd like to report on some of the work
-that I've been involved in doing. Thus, I spent some
-time thinking about ways in which I can look 
-at my past work to present it in a cohesive way. 
+I was invited to give a talk at the SEN symposium. 
 
-One perspective that I have found is arguing about 
-the usefulness of taking the context into account 
-in software analytics. 
-
-I paste below the transcript of my talk for those
-who will have not been able to attend. 
+These are the slides of my talk: [pdf](/static/pdf/SEN-Symposium--TalkSlides.pdf)
 
 --- 
 
@@ -32,7 +20,11 @@ Opening story: at some point, I became concerned about
 privacy. and I realized that so I give away so much of
 my information to one single gompany: Google. At the 
 spur of the moment, I decided to start using an alternative
-search engine. 
+search engine. There are many of them. There is even one 
+which allows you to indirectly contribute to planting trees 
+with your searches! 
+
+But after a few days, I was back to Google. 
 
 I do not necessarily think that the algorithms of google
 are better. It is only that google has so much information 
