@@ -14,5 +14,8 @@ These are the slides of my talk: [pdf](/pdf/SEN-Symposium--TalkSlides.pdf)
 """
 +++
 
+I was invited to give a talk at the SEN symposium. 
+
+These are the slides of my talk: [pdf](/pdf/SEN-Symposium--TalkSlides.pdf)
 
 
