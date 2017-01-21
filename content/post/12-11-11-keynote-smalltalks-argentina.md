@@ -1,7 +1,7 @@
 +++
 date = "2012-11-20T12:00:00"
 draft = false
-tags = ["Activities"]
+tags = ["Activities", "Invited Presentations"]
 title = "Keynote at Smalltalks in Argentina"
 math = true
 summary = """
