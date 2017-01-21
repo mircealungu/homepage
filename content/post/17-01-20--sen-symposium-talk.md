@@ -2,7 +2,7 @@
 date = "2017-01-20T12:00:00"
 draft = false
 tags = ["invited presentations"]
-title = "Invited Talk on Context in Software Analytics"
+title = "Invited Talk at the SEN Symposium"
 math = true
 summary = """
 
@@ -14,19 +14,13 @@ summary = """
 
 <div  style="clear:both;"></div>
 
-I was invited to give a talk at the SEN symposium organized in Amsterdam. 
-The symposium represents the yearly meeting for software engineering 
-researchers and practitioners. This year among the other speakers there
-were Felienne Hermans, Andreas Zeller, and Hans Wanders the CIO of the Netherlands! 
+The SEN symposium in Amsterdam is a yearly event that gathers software engineering researchers and practitioners. This year I was invited to give a talk along several other great researchers and practitioners including: Felienne Hermans, Andreas Zeller, and Hans Wanders the CIO of the Netherlands! 
 
 
 """
 +++
 
-I was invited to give a talk at the SEN symposium organized in Amsterdam. 
-The symposium represents the yearly meeting for software engineering 
-researchers and practitioners. This year among the other speakers there
-were Felienne Hermans, Andreas Zeller, and Hans Wanders the CIO of the Netherlands! 
+The SEN symposium in Amsterdam is a yearly event that gathers software engineering researchers and practitioners. This year I was invited to give a talk along several other great researchers and practitioners including: Felienne Hermans, Andreas Zeller, and Hans Wanders the CIO of the Netherlands! 
 
 These are the slides of my talk are [online](/pdf/SEN-Symposium--TalkSlides.pdf)
 
