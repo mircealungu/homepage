@@ -2,7 +2,7 @@
 date = "2016-11-20T12:00:00"
 draft = false
 tags = ["Papers", "Polite"]
-title = "Polite Programmers, Use Sentence Case 📝"
+title = "📝: Polite Programmers, Use Sentence Case"
 math = true
 summary = """
 

@@ -2,15 +2,19 @@
 date = "2014-01-01T12:00:00"
 draft = false
 tags = ["Papers", "Software Evolution", "Software Architecture", "Visualization"]
-title = "Evolutionary and Collaborative Software Architecture Recovery 📝"
+title = "📝: Evolutionary and Collaborative Software Architecture Recovery "
 math = true
 summary = """
+
+<img src=/img/snaut3.png style="box-shadow:none; float: right; width:280px; padding: 10px; padding-top:0px; margin-top: 0px; margin-left: 0px; padding-left: 0px; margin-bottom: 0px; border-width: 1px;" />
 
 Our work on Softwarenaut has finally been published in the Science 
 of Computer Programming. The paper 
 ([pdf](http://scg.unibe.ch/archive/papers/Lung14a.pdf), [bibtex](http://scg.unibe.ch/scgbib?query=lung14a&display=bibtex),[citations](https://scholar.google.nl/scholar?cites=16074008290934254937&as_sdt=2005&sciodt=0,5&hl=en)) 
 introduces Softwarenaut, a visual, interactive architecture recovery tool which 
 leverages evolutionary analysis to support source code understanding. 
+
+<div  style="clear:both;"></div>
 """
 +++
 
