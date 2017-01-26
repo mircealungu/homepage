@@ -48,10 +48,6 @@ broader context in which it interacts with other systems
 supplements of the human mind"* (Vannevar Bush)
 
 
-
-For more details, the [**slides of my talk are online**](/pdf/SEN-Symposium--TalkSlides.pdf).
-
-
 <div  style="clear:both;"></div>
 
 # A Fun Audience
@@ -73,3 +69,6 @@ that in the audience there were three people who read War and Peace :)
 
 
  <div  style="clear:both;"></div>
+
+ For more details, the [**slides of my talk are online**](/pdf/SEN-Symposium--TalkSlides.pdf).
+
