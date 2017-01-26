@@ -22,24 +22,30 @@ The SEN symposium in Amsterdam is a yearly event that gathers software engineeri
 
 The SEN symposium in Amsterdam is a yearly event that gathers software engineering researchers and practitioners. This year I was invited to give a talk along several other great researchers and practitioners including: Felienne Hermans, Andreas Zeller, and Hans Wanders the CIO of the Netherlands! 
 
-In my talk I argued that our work in software analytics is more relevant 
-if we take into account three types of context in our analysis: 
+# Context in Software Analytics
+I started my talk observing that Google has very relevant search 
+results because they take the context of the search into account.
+
+I then argued that our work in software analytics becomes more relevant 
+and powerful if we take the context into into account. I discussed 
+in particular three types of context that I have encountered in 
+my work:
 
 - **The Temporal** context allows our analysis to benefit from the 
 temporal locality of the software evolution process 
 - **The (Eco)Systemic** context allows us to understand a system in the
-broader context of it's ecosystem
+broader context in which it interacts with other systems
 - **The Personal** context allows our tools to adapt
-to the particular needs of the individual.
+to the particular needs of the individual developer and become
+what Vannevar Bush envisioned *"intimate supplements of the human mind"*
 
-These are the slides of my talk are [online](/pdf/SEN-Symposium--TalkSlides.pdf)
-
+For more details, the [**slides of my talk are online**](/pdf/SEN-Symposium--TalkSlides.pdf)
 
 
 <div  style="clear:both;"></div>
 
-
-The organizers have equiped the participants with voting cards: yellow and 
+# Fun with the Audience
+The organizers have provided the participants with voting cards: yellow and 
 red. This is a nice idea, since you can interact with the audience in a more
 playful manner. At some point, I asked the audience to lift their red cards if they 
 prefer to read War and Peace and the yellow cards if they'd prefer to read
