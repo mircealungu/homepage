@@ -15,13 +15,13 @@ summary = """
 
 <div  style="clear:both;"></div>
 
-The SEN symposium in Amsterdam is a yearly event that gathers software engineering researchers and practitioners. This year I was invited to give a talk along several other great researchers and practitioners including: Felienne Hermans, Andreas Zeller, and Hans Wanders the CIO of the Netherlands! 
+The SEN symposium in Amsterdam is a yearly event that gathers software engineering researchers and practitioners. This year I was invited to give a talk along several great speakers including: Felienne Hermans, Andreas Zeller, Marielle Stoelinga, and Hans Wanders the CIO (!) of the Netherlands.
 
 
 """
 +++
 
-The SEN symposium in Amsterdam is a yearly event that gathers software engineering researchers and practitioners. This year I was invited to give a talk along several other great researchers and practitioners including: Felienne Hermans, Andreas Zeller, and Hans Wanders the CIO of the Netherlands! 
+The SEN symposium in Amsterdam is a yearly event that gathers software engineering researchers and practitioners. This year I was invited to give a talk along several great speakers including: Felienne Hermans, Andreas Zeller, Marielle Stoelinga, and Hans Wanders the CIO (!) of the Netherlands.
 
 <br/>
 
@@ -53,7 +53,7 @@ supplements of the human mind"* (Vannevar Bush)
 # A Fun Audience
 The organizers have provided the participants with voting cards: yellow and 
 red. This is a nice idea, since you can interact with the audience in a more
-fun manner. 
+interactive manner.
 
 
 At some point, I took a picture of the audiencve after I asked them to lift their red cards if they 
@@ -65,10 +65,10 @@ the source code of ArgoUML.
 
 
 Looking at the three yellow cards, it seems
-that in the audience there were three people who read War and Peace :)
+that in the audience there were three people who have already read War and Peace :)
 
 
  <div  style="clear:both;"></div>
 
- For more details, the [**slides of my talk are online**](/pdf/SEN-Symposium--TalkSlides.pdf).
+ The [**slides of my talk are online**](/pdf/SEN-Symposium--TalkSlides.pdf).
 

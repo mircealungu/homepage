@@ -2,7 +2,7 @@
 date = "2014-01-01T12:00:00"
 draft = false
 tags = ["Papers", "Software Evolution", "Software Architecture", "Visualization"]
-title = "📝: Evolutionary and Collaborative Software Architecture Recovery "
+title = "📝 Evolutionary and Collaborative Software Architecture Recovery "
 math = true
 summary = """
 
