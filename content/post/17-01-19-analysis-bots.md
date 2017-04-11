@@ -6,25 +6,16 @@ title = "📝 Analysis Bots"
 math = true
 summary = """
 
-Our paper on analysis bots has been accepted to the ICSE NIER 
-track. The paper is co-written with Ivan Bestchastnick from 
-University of British Columbia and Yanyan Zhuang from the 
-University of Colorado. 
+<img src=/img/analysis-bot.png style="box-shadow:none; float: left; width:116px; padding: 10px; padding-top:0px; margin-top: 0px; margin-left: 0px; padding-left: 0px; margin-bottom: 0px; border-width: 1px;" />
 
+Our paper on analysis bots has been accepted to the ICSE NIER 
+track. 
 The paper is written from the perspective of software engineering
 researchers and for a software engineering audience. It argues
 that we must implement a platform where analysis bots compete
 to provide the most meaningful analysis results to practitioners. 
 
-However, I think there is a more powerful and general 
-perspective which is trying to emerge from the paper. In particular
-I find it fascinating to think of the introduction of automated
-agents in a workflow which is designed for people. 
-
-Or maybe this is simply automation catching up with us, software engineers?
-
-Anyway, the [preprint pdf](/papers/17-analysis-bots.pdf) is available
-online. It's not too long and an easy read ;)
+<div  style="clear:both;"></div>
 
 """
 +++
