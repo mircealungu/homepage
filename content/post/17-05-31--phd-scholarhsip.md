@@ -21,12 +21,12 @@ In the Scholarship Programme, selected prospective PhD students are invited to w
 
 The Software Engineering and Architecture Research Group carries research in software engineering with a focus on architecture, evolution analysis, and intelligent tools for software development. The group is interested in particular in candidates who have a strong background and interest in one of the following research directions:
 
-- software analysis
-- software visualization
+
 - program understanding
-- software ecosystem evolution
-- accelerating knowledge acquisition
-- run-time monitoring of software systems
+- software analysis and visualization
+- adaptable and personalized software tools
+- software ecosystem evolution and monitoring
+- software engineering for intelligent systems
 
 The University of Groningen, one of the oldest universities in the Netherlands, is home to a vibrant international student body. The university constantly ranks in the top 100 universities in the world. 
 
