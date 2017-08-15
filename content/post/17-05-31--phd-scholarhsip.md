@@ -14,11 +14,11 @@ I am glad to announce that I have funding for a PhD scholarship in the the Softw
 ## The Scholarship
 I am glad to announce that I have funding for a PhD scholarship in the the Software Engineering and Architecture Research Group at the University of Groningen in the Netherlands. 
 
-The Software Engineering and Architecture Research Group ([SEARCH](http://www.cs.rug.nl/search/Main/People)) carries research in software engineering with a focus on architecture, cloud computing, software evolution analysis, and intelligent tools for software development. This particular position is mainly targeted at candidates who have a strong background and interest in one of the following research directions:
+The Software Engineering and Architecture Research Group ([SEARCH](http://www.cs.rug.nl/search/Main/People)) carries research in software engineering in general with particular interest in architecture, cloud computing, software evolution analysis, and intelligent tools for software development. This particular position is mainly targeted at candidates who have a strong background and interest in one of the following research directions:
 
 - software analysis and visualization
-- adaptable, personalized, and intelligent software tools
 - software ecosystem evolution and monitoring
+- adaptable, personalized, and intelligent tools and systems
 
 However, if your interest is different and you can provide a strong argument on why your topic would be relevant for software engineering research I would be happy to hear from you.
 
