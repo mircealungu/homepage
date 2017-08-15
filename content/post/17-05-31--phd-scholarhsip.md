@@ -32,5 +32,5 @@ The University of Groningen, one of the oldest universities in the Netherlands, 
 
 ## How to Apply
 
-To apply, please send an email, including a short statement of interest and CV with at least two references to Dr. Mircea Lungu (<a href=mailto:m.f.lungu@rug.nl>m.f.lungu@rug.nl</a>). The desired starting date should be before the end of 2017. The applications will be considered on a first come first served basis.
+To apply, please send an email, including a short statement of interest and CV with at least two references to [Dr. Mircea Lungu](http://mircealungu.github.io). The desired starting date should be before the end of 2017. The applications will be considered on a first come first served basis.
 
