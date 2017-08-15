@@ -6,39 +6,31 @@ title = "PhD Scholarship in Software Engineering"
 math = true
 summary = """
 
-Within the context of the University PhD Scholarships Programme, applications are invited for an opening in the Software Engineering and Architecture Research Group at the University of Groningen in the Netherlands.
-
-In the Scholarship Programme, selected prospective PhD students are invited to write their own PhD research proposal in collaboration with an expert PhD supervisor from the University of Groningen with whom they want to work. As a PhD scholarship student you have the opportunity to let your curiosity drive your research at the boundaries of knowledge. More details about the programme are available online [1]
-
+I am glad to announce that I have funding for a PhD scholarship in the the Software Engineering and Architecture Research Group at the University of Groningen in the Netherlands. As a PhD student you are an employee with full rights of the University of Groningen, you get the chance to be involved and gather experience in teaching and research at the frontier of software engineering. You should also be ready to travel, since when you publish articles in conferences, you will have to travel to present your results. 
 
 """
 +++
 
 ## The Scholarship
-Within the context of the University PhD Scholarships Programme, applications are invited for an opening in the Software Engineering and Architecture Research Group at the University of Groningen in the Netherlands.
+I am glad to announce that I have funding for a PhD scholarship in the the Software Engineering and Architecture Research Group at the University of Groningen in the Netherlands. 
 
-In the Scholarship Programme, selected prospective PhD students are invited to write their own PhD research proposal in collaboration with an expert PhD supervisor from the University of Groningen with whom they want to work. As a PhD scholarship student you have the opportunity to let your curiosity drive your research at the boundaries of knowledge. More details about the programme are available online [1]
+The Software Engineering and Architecture Research Group ([SEARCH](http://www.cs.rug.nl/search/Main/People)) carries research in software engineering with a focus on architecture, cloud computing, software evolution analysis, and intelligent tools for software development. This particular position is mainly targeted at candidates who have a strong background and interest in one of the following research directions:
 
-The Software Engineering and Architecture Research Group carries research in software engineering with a focus on architecture, evolution analysis, and intelligent tools for software development. The group is interested in particular in candidates who have a strong background and interest in one of the following research directions:
-
-
-- program understanding
 - software analysis and visualization
-- adaptable and personalized software tools
+- adaptable, personalized, and intelligent software tools
 - software ecosystem evolution and monitoring
-- software engineering for intelligent systems
 
-The University of Groningen, one of the oldest universities in the Netherlands, is home to a vibrant international student body. The university constantly ranks in the top 100 universities in the world. 
+However, if your interest is different and you can provide a strong argument on why your topic would be relevant for software engineering research I would be happy to hear from you.
+
+As a PhD student you have a salary and you are an employee with full rights of the University of Groningen. You have the chance of doing cutting-edge research in software engineering and you have the option of  becoming involved also in teaching and assisting courses. You should also be ready to travel, since part of your job will be traveling to conferences and to present your results. 
+
+The University of Groningen, one of the oldest universities in the Netherlands, is home to a vibrant international student body. The university constantly ranks as one of the best universities in the world ( currently ranked [59](http://www.shanghairanking.com/ARWU2017.html) ).
 
 ## Life in Groningen
 
-<a href="http://www.groningenlife.nl/en">Life in Groningen is good</a>. The city of Groningen has an active cultural scene and the university sports center offers a wide range of athletic activities. Groningen is constantly ranked as the best Dutch city to study in.
+<a href="http://www.groningenlife.nl/en">Life in Groningen is great</a>. The city of Groningen has an active cultural scene and a world class university sports center which offers a wide range of athletic activities. Groningen is constantly ranked as the best Dutch city to study in.
 
 ## How to Apply
 
-To apply, please send an email, including a short statement of research interest and CV with at least two references to Dr. Mircea Lungu (<a href=mailto:m.f.lungu@rug.nl>m.f.lungu@rug.nl</a>) by July 15, 2017.
-
-
-
-[1] http://www.rug.nl/education/phd-programmes/phd-scholarship-programme/
+To apply, please send an email, including a short statement of interest and CV with at least two references to Dr. Mircea Lungu (<a href=mailto:m.f.lungu@rug.nl>m.f.lungu@rug.nl</a>). The desired starting date should be before the end of 2017. The applications will be considered on a first come first served basis.
 
