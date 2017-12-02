@@ -16,7 +16,7 @@ I am glad to announce that I have funding for a PhD student in the the Software 
 ## The Topic
 The Software Engineering and Architecture Research Group ([SEARCH](http://www.cs.rug.nl/search/Main/People)) carries research in software engineering in general with particular interest in architecture, cloud computing, software evolution analysis, and intelligent tools for software development. 
 
-This particular position is mainly targeted at candidates who have a strong background and interest in one of the following research directions:
+This particular position will be under the supervision of Dr. Mircea Lungu and is mainly targeted at candidates who have a strong background and interest in one of the following research directions:
 
 - software analysis and visualization
 - software ecosystem evolution and monitoring
