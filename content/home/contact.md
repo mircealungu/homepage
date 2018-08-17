@@ -16,13 +16,9 @@ autolink = true
 
 +++
 
-[ [University Page](http://www.rug.nl/staff/m.f.lungu/) ]
-[ [Personal Blog](http://mir.lu) ]
+[ [University Page](https://pure.itu.dk/portal/en/persons/mircea-lungu(02960d47-7677-4b2c-99d4-490a31fd6885).html) ]
 [ [LinkedIn](https://www.linkedin.com/in/mircealungu)]
 
-[ [Academia](http://rug.academia.edu/MirceaLungu)]
 [ [ResearchGate](https://www.researchgate.net/profile/Mircea_Lungu3/publications)]
 [ [Google Scholar](https://scholar.google.nl/citations?user=kLqXicUAAAAJ&hl=en)]
-
-
 

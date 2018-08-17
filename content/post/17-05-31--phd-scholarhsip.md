@@ -1,6 +1,6 @@
 +++
 date = "2017-05-31T12:00:00"
-draft = false
+draft = true
 tags = ["research"]
 title = "PhD Scholarship in Software Engineering"
 math = true

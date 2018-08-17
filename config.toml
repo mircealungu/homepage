@@ -13,15 +13,15 @@ googleAnalytics = ""
 
 
 [params]
-  name = "Dr. Mircea Lungu"
-  role = "Assistant Professor in Software Engineering"
-  organization = "University of Groningen"
+  name = "Mircea Lungu, PhD"
+  role = "Associate Professor"
+  organization = "ITU Copenhagen"
   avatar = "presenting.png"
-  email = "m.f.lungu@rug.nl"
-  address = "Office 560, Nijenborgh 9, 9747 AG, Groningen"
+  email = "mlun@itu.dk"
+  address = "Office 4C08, Rued Langgaards Vej 7, 2300 Copenhagen, Denmark"
 
   # Enable Keybase in Contact section by entering your keybase.io username.
-  keybase = "mircea"
+  #keybase = "mircea"
 
   # Date format (refer to Go's date format: http://flippinggodateformat.com )
   #   Examples: "Mon, Jan 2, 2006" or "2006-01-02"
@@ -71,7 +71,7 @@ googleAnalytics = ""
   [[params.social]]
     icon = "google-scholar"
     icon_pack = "ai"
-    link = "https://scholar.google.co.uk/citations?user=kLqXicUAAAAJ"
+    link = "https://scholar.google.nl/citations?user=7zx6Cg0AAAAJ&hl=en"
 
   [[params.social]]
     icon = "github"
