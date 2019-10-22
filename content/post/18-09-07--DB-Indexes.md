@@ -34,7 +34,7 @@ we recommend further personalized reading and personalized
 vocabulary exercises. 
 
 The Zeeguu web application has a classical client-server 
-architecture with the backend being implemnted with Flask 
+architecture with the backend being implemented with Flask 
 -- one of the most popular web application frameworks 
 for Python. 
 
@@ -75,7 +75,7 @@ based on my interactions with the reader yesterday and today.
 If you look at the article titles. you see that today I read two 
 French articles and yesterday I read a German one.
 
-If you look at the session lengths,you see that this morning I was
+If you look at the session lengths, you see that this morning I was
 not very focused: it took me multiple focused sessions to read 
 the article about the Coca Cola bottle size... might be a problem
 with my attention span, but might also be a problem with the 
@@ -104,7 +104,7 @@ about the user sessions to the front-end web application is as slow as this slot
 <img src=/img/sloth.gif style="border: 1px solid #ccddcc; padding: 6px; margin: 36px; margin-left: auto; margin-right: auto;" />
 
 
-Remember that I told you that FMD is alredy deployed with the Zeeguu API.
+Remember that I told you that FMD is already deployed with the Zeeguu API.
 
 Thus, to find out why is the endpoint so slow, I opened the FMD dashboard and enabled the Profiler for the 
  endpoint. When the profiler is enabled, for every
@@ -135,8 +135,8 @@ in the following code (which is not fully visible in the image):
 
 
 This is Python code that uses SQLAlchemy. 
-Sqlalchemy is  a very powerful ORM which will convert this Python code to SQL and 
-send the correponding queries to MySQL. At least in theory
+SQLAlchemy is  a very powerful ORM which will convert this Python code to SQL and 
+send the corresponding queries to MySQL. At least in theory
 we do not need to know MySQL if we use SQLAlchemy. (But
 because of something that Joel Spolsky calls [the law of 
 leaky abstractions](https://www.joelonsoftware.com/2002/11/11/the-law-of-leaky-abstractions/), 
