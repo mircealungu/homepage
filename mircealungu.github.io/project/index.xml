@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Projects on Mircea Lungu</title>
+    <link>https://mircealungu.github.io/project/</link>
+    <description>Recent content in Projects on Mircea Lungu</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2016 Mircea F Lungu</copyright>
+    <lastBuildDate>Sun, 27 Nov 2016 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://mircealungu.github.io/project/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Time to Learn </title>
+      <link>https://mircealungu.github.io/project/time-to-learn/</link>
+      <pubDate>Sun, 27 Nov 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://mircealungu.github.io/project/time-to-learn/</guid>
+      <description>Softwarenaut is built on top of the Cincom distribution of Smalltalk for historical reasons. This means that in order to run the tool you also need Cincom Smalltalk. There are three ways in which you can install the tool.</description>
+    </item>
+    
+    <item>
+      <title>Zeeguu</title>
+      <link>https://mircealungu.github.io/project/zeeguu/</link>
+      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://mircealungu.github.io/project/zeeguu/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Polite</title>
+      <link>https://mircealungu.github.io/project/polite/</link>
+      <pubDate>Mon, 27 Apr 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://mircealungu.github.io/project/polite/</guid>
+      <description>Polite Smalltalk is a small evolutionary mutation of the Smalltalk programming language that aims to encourage developers to think more about their programs as prose. The main mechanism by which Polite does this is what we define here as {\em sentence case identifiers} &amp;mdash; a naming convention that allows spaces in identifier names. Unlike projection editors which can easily allow spaces in their identifiers, Polite programs are stored as text.</description>
+    </item>
+    
+    <item>
+      <title>Softwarenaut </title>
+      <link>https://mircealungu.github.io/project/softwarenaut/</link>
+      <pubDate>Sun, 27 Apr 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://mircealungu.github.io/project/softwarenaut/</guid>
+      <description>Softwarenaut is built on top of the Cincom distribution of Smalltalk for historical reasons. This means that in order to run the tool you also need Cincom Smalltalk. There are three ways in which you can install the tool.</description>
+    </item>
+    
+  </channel>
+</rss>

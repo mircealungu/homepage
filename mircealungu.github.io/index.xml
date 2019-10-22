@@ -1,0 +1,631 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mircea Lungu on Mircea Lungu</title>
+    <link>https://mircealungu.github.io/</link>
+    <description>Recent content in Mircea Lungu on Mircea Lungu</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2016 Mircea F Lungu</copyright>
+    <lastBuildDate>Wed, 20 Apr 2016 00:00:00 +0000</lastBuildDate>
+    <atom:link href="/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Using a Performance Monitor to Illustrate the Power of DB Indexes</title>
+      <link>https://mircealungu.github.io/post/18-09-07--db-indexes/</link>
+      <pubDate>Thu, 06 Sep 2018 10:00:00 +0000</pubDate>
+      
+      <guid>https://mircealungu.github.io/post/18-09-07--db-indexes/</guid>
+      <description>
+
+&lt;p&gt;TL;DR;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;- Database indexes are easy and powerful tools for performance enginering 
+- An internal performance monitor enables quick insights into service performance
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+
+&lt;h2 id=&#34;prologue-two-research-projects&#34;&gt;Prologue: Two Research Projects&lt;/h2&gt;
+
+&lt;p&gt;Project #1 - In &lt;a href=&#34;http://zeeguu.org&#34;&gt;Zeeguu&lt;/a&gt; we research how we
+can make learning a foreign language more fun. We monitor
+a learners interactions with foreign texts and based on this
+we recommend further personalized reading and personalized
+vocabulary exercises.&lt;/p&gt;
+
+&lt;p&gt;The Zeeguu web application has a classical client-server
+architecture with the backend being implemnted with Flask
+&amp;ndash; one of the most popular web application frameworks
+for Python.&lt;/p&gt;
+
+&lt;p&gt;Project #2: The &lt;a href=&#34;https://github.com/flask-dashboard/Flask-MonitoringDashboard/&#34;&gt;Flask Monitoring Dashboard&lt;/a&gt;
+(FMD) is an advanced internal monitor that tracks the evolution of
+performance and utilization of web applications. It can
+be deployed with near zero effort for Flask-based apps
+and APIs. The main developers of the FMD are Bogdan Petre and
+Patrick Vogel, two of my past master students in Groningen.&lt;/p&gt;
+
+&lt;p&gt;In the long tradition of &lt;em&gt;eating your own dogfood&lt;/em&gt;
+the FMD is used to monitor the performance evolution
+of the Zeeguu API.&lt;/p&gt;
+
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+
+&lt;h2 id=&#34;context-why-computing-reading-sessions-is-not-so-easy&#34;&gt;Context: Why Computing Reading Sessions Is Not So Easy&lt;/h2&gt;
+
+&lt;p&gt;Zeeguu contains a module that computes the length of user reading sessions, which are periods of time in which a reader is focused while reading a text.&lt;/p&gt;
+
+&lt;p&gt;Computing reading sessions is not easy, because users might be reading an article
+and then leave it open while chatting with their friends on WhatsApp
+or maybe &lt;em&gt;crushing it&lt;/em&gt; at Candy Crush.
+Trying to predict when the user stopped paying attention requires
+complicated heuristics that
+are based all the actions that a user performed while interacting
+with a text.&lt;/p&gt;
+
+&lt;p&gt;The Screenshot bellow is from the Zeeguu web app and
+shows the reading sessions that were inferred
+based on my interactions with the reader yesterday and today.&lt;/p&gt;
+
+&lt;p&gt;If you look at the article titles. you see that today I read two
+French articles and yesterday I read a German one.&lt;/p&gt;
+
+&lt;p&gt;If you look at the session lengths,you see that this morning I was
+not very focused: it took me multiple focused sessions to read
+the article about the Coca Cola bottle size&amp;hellip; might be a problem
+with my attention span, but might also be a problem with the
+interestingness of the article&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=/img/db-indexes-1.png style=&#34;border: 1px solid #ccddcc; padding: 6px; margin: 36px; margin-left: auto; margin-right: auto;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+
+&lt;h2 id=&#34;the-first-step-towards-solution-is-admitting-you-have-a-problem&#34;&gt;The First Step Towards Solution is Admitting You Have a Problem&lt;/h2&gt;
+
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+
+&lt;p&gt;This morning I realized that this endpoint which provides the information
+about the user sessions to the front-end web application is as slow as this sloth:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=/img/sloth.gif style=&#34;border: 1px solid #ccddcc; padding: 6px; margin: 36px; margin-left: auto; margin-right: auto;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Remember that I told you that FMD is alredy deployed with the Zeeguu API.&lt;/p&gt;
+
+&lt;p&gt;Thus, to find out why is the endpoint so slow, I opened the FMD dashboard and enabled the Profiler for the
+ endpoint. When the profiler is enabled, for every
+call to the endpoint the FMD samples continuously the Python
+call stack in such a way that it can present where the time
+is being spent during the computations associated with the endpoint.&lt;/p&gt;
+
+&lt;p&gt;After enabling the profiler for the endpoint, I made sure to call
+the endpoint one more time. Then I went to the Profiler tab  to discover the information presented in the following figure which shows the time spent every one of the
+code lines that are being called from the endpoint.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=/img/db-indexes-2.png style=&#34;border: 1px solid #ccddcc; margin: 0 auto; padding: 0 20; width: 100%; &#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+
+&lt;p&gt;The first line shows us that the endpoint was computing stuff for 43 seconds!&lt;/p&gt;
+
+&lt;p&gt;The last line shows that 98% of the the 43 seconds is spent
+in the following code (which is not fully visible in the image):&lt;/p&gt;
+
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;cls.query.filter(UserActivityData.time &amp;lt; self.last_action_time).all()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+
+&lt;p&gt;This is Python code that uses SQLAlchemy.
+Sqlalchemy is  a very powerful ORM which will convert this Python code to SQL and
+send the correponding queries to MySQL. At least in theory
+we do not need to know MySQL if we use SQLAlchemy. (But
+because of something that Joel Spolsky calls &lt;a href=&#34;https://www.joelonsoftware.com/2002/11/11/the-law-of-leaky-abstractions/&#34;&gt;the law of
+leaky abstractions&lt;/a&gt;,
+most of the times we still need to understand some SQL anyway&amp;hellip; )&lt;/p&gt;
+
+&lt;p&gt;So we now know that the slowness of our endpoint is due to the SQL query
+that is generated by the SQLAlchemy code in the above-mentioned
+line. And we also know that, due to the SQLAlchemy naming conventions,
+the very slow SQL query must work with the &lt;code&gt;user_activity_data&lt;/code&gt; table
+and its &lt;code&gt;time&lt;/code&gt; column (this is given away by the &lt;code&gt;UserActivityData.time&lt;/code&gt; part of the
+code above).&lt;/p&gt;
+
+&lt;p&gt;Looking at the table structure
+in the database and at the session computation algorithm we
+observe two things:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;the table has not been designed with the session computation
+algorithm in mind, and the algorithm iterates many times through
+all the table rows&lt;/li&gt;
+&lt;li&gt;the &lt;code&gt;user_activity_data&lt;/code&gt; table is a very large table with
+hundreds of thousands of records&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;fixing-the-problem-without-touching-the-algorithm&#34;&gt;Fixing the Problem Without Touching the Algorithm&lt;/h1&gt;
+
+&lt;p&gt;The first thing that comes to my mind is a recent discussion with
+my sister about DB indexes and how they are very powerful performance tools. So I&amp;rsquo;m thinking, maybe
+this is an opportunity to show with a case study the
+impact of an index.&lt;/p&gt;
+
+&lt;p&gt;I thus go to the database and I add a new index that is
+inspired by the &lt;code&gt;UserActivityData.time&lt;/code&gt; that appears
+in the very slow code line above:&lt;/p&gt;
+
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;CREATE INDEX index_uadtime ON user_activity_data(time)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+
+&lt;p&gt;This will make MySQL create additional internal structures
+that will allow it to optimize queries that involve
+in their condition the &lt;code&gt;user_activity_data&lt;/code&gt;
+table and the &lt;code&gt;time&lt;/code&gt; column.&lt;/p&gt;
+
+&lt;p&gt;I redeploy the API, request again the endpoint
+and then I visit again the Profiler page, and lo and behold!
+Instead of 43 seconds now my endpoint takes 1.6 seconds.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=/img/db-indexes-3.png style=&#34;border: 1px solid #ccddcc; margin: 0 auto; padding: 0 20; width: 100%; &#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;I now have a nice example to show to my sister about
+the huge impact indexes have on database performance.&lt;/p&gt;
+
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+
+&lt;h1 id=&#34;the-morales-of-this-story&#34;&gt;The Morales of this Story&lt;/h1&gt;
+
+&lt;p&gt;&lt;strong&gt;For the Beginner:&lt;/strong&gt; Indexes are very important for
+the performance of your database. Also, profiling
+the performance of your code is a skill you will have
+to learn. The FMD is a good starting point if you
+are a Flask developer.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;For the Advanced:&lt;/strong&gt; An internal monitor for your
+API can be a wonderful and much faster way of getting
+insight into the workings of your service. Sure, you
+can also deploy a profiler from your development
+environment, but having the profiler available to be
+deployed in production with a single click has the
+huge advantage of you getting information about the
+&lt;strong&gt;real&lt;/strong&gt; data.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;For the Flask/Python Developer:&lt;/strong&gt; FMD is an awesome
+tool. So grab it while it&amp;rsquo;s still
+a research project and is free. In exchange we might
+ask you some questions at some point. But hey, that&amp;rsquo;s
+nothing for the easy insights you get with it.&lt;/p&gt;
+
+&lt;h1 id=&#34;references&#34;&gt;References&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Zeeguu &amp;ndash; &lt;a href=&#34;https://www.researchgate.net/publication/322489283_As_We_May_Study_Towards_the_Web_as_a_Personalized_Language_Textbook&#34;&gt;scientific paper&lt;/a&gt;, &lt;a href=&#34;https://zeeguu.org&#34;&gt;website&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;FMD &amp;ndash; &lt;a href=&#34;https://github.com/flask-dashboard/Vissoft-17-Paper/blob/master/FlaskDashboard-Preprint.pdf&#34;&gt;paper&lt;/a&gt;, &lt;a href=&#34;https://github.com/flask-dashboard/Flask-MonitoringDashboard/&#34;&gt;website&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Starting as Associate at IT University in Copenhagen</title>
+      <link>https://mircealungu.github.io/post/18-07-01--started-at-itu/</link>
+      <pubDate>Sun, 01 Jul 2018 12:00:00 +0000</pubDate>
+      
+      <guid>https://mircealungu.github.io/post/18-07-01--started-at-itu/</guid>
+      <description>&lt;p&gt;&lt;img src=/img/itu.jpg style=&#34;box-shadow:none; float: left; width:60%; padding: 10px; padding-top:0px; margin-top: 0px; margin-left: 0px; padding-left: 0px; margin-bottom: 0px; border-width: 0px;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;I am glad to announce that I have started as Associate Professor at the IT University in Copenhagen.
+I will be teaching Software Architecture, Technical Interaction Desgin, and Advanced Software Engineering. I will also be continuing my work on software evolution, software ecosystems, and using technology to enhance personalized learning. The building looks amazing. The colleagues are diverse and telented. And the city is as bike-friendly as Groningen was. I have a feeling that is &amp;ldquo;the beginning of a beautiful friendship&amp;rdquo; :)&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Invited Talk at the SEN Symposium</title>
+      <link>https://mircealungu.github.io/post/17-01-20--sen-symposium-talk/</link>
+      <pubDate>Fri, 20 Jan 2017 12:00:00 +0000</pubDate>
+      
+      <guid>https://mircealungu.github.io/post/17-01-20--sen-symposium-talk/</guid>
+      <description>
+
+&lt;p&gt;The SEN symposium in Amsterdam is a yearly event that gathers software engineering researchers and practitioners. This year I was invited to give a talk along several great speakers including: Felienne Hermans, Andreas Zeller, Marielle Stoelinga, and Hans Wanders the CIO (!) of the Netherlands.&lt;/p&gt;
+
+&lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=/img/context-slide.png style=&#34;box-shadow:none;  width:300px; padding: 10px; padding-top:0px; margin-top: 0px; margin-left: auto; margin-right: auto; padding-left: 0px; margin-bottom: 0px; border-width: 1;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;I started my talk observing that Google, Facebook, and Twitter
+are using context in order to provide us with the best&amp;hellip; ads!
+I then argued that in software analytics we can use context in
+order to create more powerful tools and analyses.&lt;/p&gt;
+
+&lt;p&gt;In particular I discussed three types of context that I have experienced
+with in my work:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;The Temporal&lt;/strong&gt; context allows us to replay the evolution
+of the system to better understand it&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;The (eco)Systemic&lt;/strong&gt; context allows us to understand a system in the
+broader context in which it interacts with other systems&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;The Personal&lt;/strong&gt; context allows our analytics tools to become &lt;em&gt;&amp;ldquo;intimate
+supplements of the human mind&amp;rdquo;&lt;/em&gt; (Vannevar Bush)&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div  style=&#34;clear:both;&#34;&gt;&lt;/div&gt;
+
+&lt;h1 id=&#34;a-fun-audience&#34;&gt;A Fun Audience&lt;/h1&gt;
+
+&lt;p&gt;The organizers have provided the participants with voting cards: yellow and
+red. This is a nice idea, since you can interact with the audience in a more
+interactive manner.&lt;/p&gt;
+
+&lt;p&gt;At some point, I took a picture of the audiencve after I asked them to lift their red cards if they
+prefer to read War and Peace and the yellow cards if they&amp;rsquo;d prefer to read
+the source code of ArgoUML.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=/img/audience-voting.jpg style=&#34;box-shadow:none; height:300px; padding: 10px; padding-top:0px; margin-top: 0px; margin-left: auto; margin-right: auto; padding-left: 0px; margin-bottom: 0px; border-width: 1px;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Looking at the three yellow cards, it seems
+that in the audience there were three people who have already read War and Peace :)&lt;/p&gt;
+
+&lt;p&gt;&lt;div  style=&#34;clear:both;&#34;&gt;&lt;/div&gt;&lt;/p&gt;
+
+&lt;p&gt;The &lt;a href=&#34;https://mircealungu.github.io/pdf/SEN-Symposium--TalkSlides.pdf&#34;&gt;&lt;strong&gt;slides of my talk are online&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>📝 Analysis Bots</title>
+      <link>https://mircealungu.github.io/post/17-01-19-analysis-bots/</link>
+      <pubDate>Thu, 19 Jan 2017 12:00:00 +0000</pubDate>
+      
+      <guid>https://mircealungu.github.io/post/17-01-19-analysis-bots/</guid>
+      <description>
+
+&lt;h3 id=&#34;the-story&#34;&gt;The Story&lt;/h3&gt;
+
+&lt;p&gt;Our paper on analysis bots has been accepted to the ICSE ERA
+track. The paper is co-written with Ivan Bestchastnick from
+University of British Columbia and Yanyan Zhuang from the
+University of Colorado.&lt;/p&gt;
+
+&lt;p&gt;The paper is written from the perspective of software engineering
+researchers and for a software engineering audience. It argues
+that we must implement a platform where analysis bots compete
+to provide the most meaningful analysis results to practitioners.&lt;/p&gt;
+
+&lt;p&gt;However, I think there is a more powerful and general
+perspective which is trying to emerge from the paper. In particular
+I find it fascinating to think of the introduction of automated
+agents in a workflow which is designed for people.&lt;/p&gt;
+
+&lt;p&gt;Or maybe this is simply automation catching up with us, software engineers?&lt;/p&gt;
+
+&lt;h3 id=&#34;the-paper&#34;&gt;The Paper&lt;/h3&gt;
+
+&lt;p&gt;The &lt;a href=&#34;https://mircealungu.github.io/papers/17-analysis-bots.pdf&#34;&gt;preprint (pdf)&lt;/a&gt; is available
+online. It&amp;rsquo;s not too long and an easy read ;)&lt;/p&gt;
+
+&lt;h3 id=&#34;the-bibtex&#34;&gt;The BibTex&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;@inproceedings{Best:2017,
+ author = {Beschastnikh, Ivan and Lungu, Mircea and Zhuang, Yanyan},
+ title = {{Accelerating Software Engineering Research Adoption
+with Analysis Bots}},
+ booktitle = {Proceedings of the 39th International Conference on Software Engineering},
+ series = {ICSE 2017},
+ year = {2017},
+ location = {Buenos Aires, Argentina},
+ pages = {},
+ url = {},
+ doi = {},
+ acmid = {},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+} 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;the-abstract&#34;&gt;The Abstract&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;An important part of software engineering (SE) research is to develop new analysis techniques and to integrate these techniques into software development practice. However, since access to developers is non-trivial and research tool adoption is slow, new analyses are typically evaluated as follows: a prototype tool that embeds the analysis is implemented, a set of projects is identified, their revisions are selected, and the tool is run in a controlled environment, rarely involving the developers of the software. As a result, research artifacts are brittle and it is unclear if an analysis tool would actually be adopted.
+
+In this paper, we envision harnessing the rich interfaces provided by popular social coding platforms for automated deployment and evaluation of SE research analysis. We propose that SE analyses can be deployed as analysis bots. We focus on two specific benefits of such an approach: 
+    (1) analysis bots can help evaluate analysis techniques in a less controlled, and more realistic context, and 
+    (2) analysis bots provide an interface for developers to “subscribe” to new research techniques without needing to trust the implementation, the developer of the new tool, or to install the analysis tool locally. 
+
+We outline basic requirements for an analysis bots platform, and present research challenges that would need to be resolved for bots to flourish
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Time to Learn </title>
+      <link>https://mircealungu.github.io/project/time-to-learn/</link>
+      <pubDate>Sun, 27 Nov 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://mircealungu.github.io/project/time-to-learn/</guid>
+      <description>&lt;p&gt;Softwarenaut is built on top of the Cincom distribution of Smalltalk for historical reasons. This means that in order to run the tool you also need Cincom Smalltalk. There are three ways in which you can install the tool.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>🎉 Nominated for the Teacher of the Year Award</title>
+      <link>https://mircealungu.github.io/post/16-11-20-teacher-of-the-year/</link>
+      <pubDate>Mon, 21 Nov 2016 12:00:00 +0000</pubDate>
+      
+      <guid>https://mircealungu.github.io/post/16-11-20-teacher-of-the-year/</guid>
+      <description>&lt;p&gt;I have been nominated for the teacher of the year award!
+Especially after seeing all the other nominations I started
+feeling like I don&amp;rsquo;t deserve the honor. However, it is also
+true that together with my team, we put a lot of effort in
+  coming up with cool project ideas and
+  running them
+in the timespan of five months.&lt;/p&gt;
+
+&lt;p&gt;Thus, many thanks and congratulations for my teaching assistants:
+Laura Baakman,
+Jeroen Brandsma,
+Georgios Digkas,
+Sybren Gjaltema,
+Jelle van Wezel,
+Angelo Karountzos,
+Alexander Lukjanenkovs.&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;ve been long due to write up the lessons learned during
+the most recent software engineering courses.
+Now I feel the duty to do it even more.
+Hopefully before I start the next batch!&lt;/p&gt;
+
+&lt;p&gt;And now for the impossible challenge: can you spot me in the picture?
+&lt;img src=&#34;https://mircealungu.github.io/img/teacher.jpg&#34; alt=&#34;lala&#34; /&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>📝 Polite Programmers, Use Sentence Case</title>
+      <link>https://mircealungu.github.io/post/16-11-20-polite-smalltalk-at-nool/</link>
+      <pubDate>Sun, 20 Nov 2016 12:00:00 +0000</pubDate>
+      
+      <guid>https://mircealungu.github.io/post/16-11-20-polite-smalltalk-at-nool/</guid>
+      <description>&lt;p&gt;The programming languages reseachers have a healthy sense of humor. The -1th edition of the NOOL (New Object Oriented Languages) Workshop had a very creative call for papers. To keep up with the state of affairs, Jan Kurs and I submitted a paper with a most concise abstract:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;JavaProgrammersUseCamelCaseToSeparateWordsInIdentifiers. &lt;br/&gt;
+   Pythonistas_and_others_use_underscore_in_their_identifiers. &lt;br/&gt;
+   Polite programmers can use spaces if they like.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;The paper presents briefly some of the design decisions that went into Polite, our evolutionary mutation of Smalltalk that brings the language
+closer to natural language. (&lt;a href=&#34;https://github.com/mircealungu/Polite_Programmers__NOOL16/blob/master/preprint.pdf&#34;&gt;preprint is online&lt;/a&gt;)&lt;/p&gt;
+
+&lt;p&gt;Further Work on Polite Smalltalk:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;To try out Polite Smalltalk, &lt;a href=&#34;https://zenodo.org/record/61578#.WDYtDKIrKXQ&#34;&gt;Download the latest release from Zenodo&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>New Course: Introduction to Data Science</title>
+      <link>https://mircealungu.github.io/post/16-11-16-introduction-to-data-science-course/</link>
+      <pubDate>Wed, 16 Nov 2016 12:00:00 +0000</pubDate>
+      
+      <guid>https://mircealungu.github.io/post/16-11-16-introduction-to-data-science-course/</guid>
+      <description>&lt;p&gt;Today, with &lt;a href=&#34;http://www.cs.rug.nl/~kbunte/&#34;&gt;Kerstin Bunte&lt;/a&gt;,
+we are starting our new course on Introduction to Data Science.
+This will be interesting:
+we have 60 first year master students from
+  computer science,
+  astronomy, and
+  mathematics.
+What do they have
+in common? What topics can we cover such that most of them can
+benefit? Which topics are not too easy nor too challenging? We&amp;rsquo;ll see!&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title> Evolutionary and Collaborative Software Architecture Recovery with Softwarenaut</title>
+      <link>https://mircealungu.github.io/publication/zeeguu/</link>
+      <pubDate>Mon, 10 Oct 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://mircealungu.github.io/publication/zeeguu/</guid>
+      <description>&lt;p&gt;More detail can easily be written here using &lt;em&gt;Markdown&lt;/em&gt; and $\rm \LaTeX$ math code.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>📝 Ubiquitous Monitoring Ecosystems</title>
+      <link>https://mircealungu.github.io/post/16-09-20-bootstrapping-an-ubiquitous-ecosystem/</link>
+      <pubDate>Tue, 20 Sep 2016 12:00:00 +0000</pubDate>
+      
+      <guid>https://mircealungu.github.io/post/16-09-20-bootstrapping-an-ubiquitous-ecosystem/</guid>
+      <description>
+
+&lt;h3 id=&#34;the-story&#34;&gt;The Story&lt;/h3&gt;
+
+&lt;p&gt;I wrote a paper for the Ecosystem Architectures event (WEA&amp;rsquo;16) about the design of an ecosystem of applications which monitor a learner&amp;rsquo;s interactions with knowledge.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&amp;ldquo;An unconventional idea for an ecosystem, which shows well that there are many more opportunities to benefit from the ecosystem idea, than the various industrial applications. The concrete examples of the platform and the applications make the ideas tangible and well understandable. I particularly like the discussions of the lessons learned [&amp;hellip;]&amp;rdquo;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;This was a very nice review to read.&lt;/p&gt;
+
+&lt;p&gt;The other reviews were also positive so the paper was accepted for presentation at WEA (Workshop on Ecosystem Architectures) that will take place in Copenhagen and is colocated with ECSA.&lt;/p&gt;
+
+&lt;h3 id=&#34;the-paper&#34;&gt;The Paper&lt;/h3&gt;
+
+&lt;p&gt;The paper talks about some of the challenges and
+opportunities that come with bootstrapping a
+ubiquitous monitoring ecosystem. It is a case
+study inspired from our &lt;a href=&#34;https://zeeguu.unibe.ch&#34;&gt;Zeeguu&lt;/a&gt; ecosystem.&lt;/p&gt;
+
+&lt;p&gt;The paper is &lt;a href=&#34;https://github.com/mircealungu/Bootstrapping_an_Ecosystem__WEA16/blob/master/preprint.pdf&#34;&gt;available online&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;the-bibtex&#34;&gt;The BibTex&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;@inproceedings{Lungu16,
+ author = {Lungu, Mircea F.},
+ title = {Bootstrapping an Ubiquitous Monitoring Ecosystem for Accelerating Vocabulary Acquisition},
+ booktitle = {Proccedings of the 10th European Conference on Software Architecture Workshops},
+ series = {ECSAW 2016},
+ year = {2016},
+ isbn = {978-1-4503-4781-5},
+ location = {Copenhagen, Denmark},
+ pages = {28:1--28:4},
+ articleno = {28},
+ numpages = {4},
+ url = {http://doi.acm.org/10.1145/2993412.3003389},
+ doi = {10.1145/2993412.3003389},
+ acmid = {3003389},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {HCI, applied linguistics, software ecosystems},
+} 
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Zeeguu</title>
+      <link>https://mircealungu.github.io/project/zeeguu/</link>
+      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://mircealungu.github.io/project/zeeguu/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Polite</title>
+      <link>https://mircealungu.github.io/project/polite/</link>
+      <pubDate>Mon, 27 Apr 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://mircealungu.github.io/project/polite/</guid>
+      <description>&lt;p&gt;Polite Smalltalk is a small evolutionary mutation of the Smalltalk programming language that aims to encourage developers to think more about their programs as prose. The main mechanism by which Polite does this is what we define here as {\em sentence case identifiers} &amp;mdash; a naming convention that allows spaces in identifier names. Unlike projection editors which can easily allow spaces in their identifiers, Polite programs are stored as text.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title> Evolutionary and Collaborative Software Architecture Recovery with Softwarenaut</title>
+      <link>https://mircealungu.github.io/publication/softwarenaut/</link>
+      <pubDate>Fri, 10 Oct 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://mircealungu.github.io/publication/softwarenaut/</guid>
+      <description>&lt;p&gt;More detail can easily be written here using &lt;em&gt;Markdown&lt;/em&gt; and $\rm \LaTeX$ math code.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Softwarenaut </title>
+      <link>https://mircealungu.github.io/project/softwarenaut/</link>
+      <pubDate>Sun, 27 Apr 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://mircealungu.github.io/project/softwarenaut/</guid>
+      <description>&lt;p&gt;Softwarenaut is built on top of the Cincom distribution of Smalltalk for historical reasons. This means that in order to run the tool you also need Cincom Smalltalk. There are three ways in which you can install the tool.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>📝 Evolutionary and Collaborative Software Architecture Recovery </title>
+      <link>https://mircealungu.github.io/post/14-01-01-evolutionary-and-collaborative-software-architecture-recovery/</link>
+      <pubDate>Wed, 01 Jan 2014 12:00:00 +0000</pubDate>
+      
+      <guid>https://mircealungu.github.io/post/14-01-01-evolutionary-and-collaborative-software-architecture-recovery/</guid>
+      <description>
+
+&lt;p&gt;Our work on Softwarenaut has finally been published in the Science
+of Computer Programming. The paper
+(&lt;a href=&#34;http://scg.unibe.ch/archive/papers/Lung14a.pdf&#34;&gt;pdf&lt;/a&gt;, &lt;a href=&#34;http://scg.unibe.ch/scgbib?query=lung14a&amp;amp;display=bibtex&#34;&gt;bibtex&lt;/a&gt;,&lt;a href=&#34;https://scholar.google.nl/scholar?cites=16074008290934254937&amp;amp;as_sdt=2005&amp;amp;sciodt=0,5&amp;amp;hl=en&#34;&gt;citations&lt;/a&gt;)
+introduces Softwarenaut, a visual, interactive architecture recovery tool which
+leverages evolutionary analysis to support source code understanding.&lt;/p&gt;
+
+&lt;p&gt;This page contains a very high level description of the tool.
+For details and case studies, see&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;the journal article that describes the tool (&lt;a href=&#34;http://scg.unibe.ch/archive/papers/Lung14a.pdf&#34;&gt;preprint pdf&lt;/a&gt;, &lt;a href=&#34;http://scg.unibe.ch/scgbib?_k=mhZxW1Pf&amp;amp;query=Lung14a&amp;amp;display=bibtex&#34;&gt;bibtex&lt;/a&gt;)&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;the conference paper that describes the way we visualized hierarchical clusterings of software systems (&lt;a href=&#34;http://scg.unibe.ch/archive/papers/Lung05aExploreSemanticClusters.pdf&#34;&gt;preprint pdf&lt;/a&gt;, &lt;a href=&#34;http://scg.unibe.ch/scgbib?_k=v0zYApEK&amp;amp;query=Lung05a&amp;amp;display=bibtex&#34;&gt;bibtex&lt;/a&gt;)&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&#34;aggregating-low-level-relations-along-a-hierarchical-decomposition-of-a-system&#34;&gt;Aggregating low-level relations along a hierarchical decomposition of a system&lt;/h3&gt;
+
+&lt;p&gt;Softwarenaut aggregates low-level relations along a hierarcical decomposition of a system (e.g. the package structure in Java). Softwarenaut can thus present a high-level overview of the architectural relationships between the modules in a system.&lt;/p&gt;
+
+&lt;p&gt;The figure presents the architecture of Softwarenaut visualized in Softwarenaut. The module sizes are proportional to their LOC and the relationships are proportional to the number of low-level relationships abstracted.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://cloud.githubusercontent.com/assets/464519/21022444/eb463a12-bd7c-11e6-9a37-f6925f371eff.png&#34; alt=&#34;architecture-of-softwarenaut&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;augmenting-the-big-picture-with-evolutionary-information&#34;&gt;Augmenting The Big Picture With Evolutionary Information&lt;/h3&gt;
+
+&lt;p&gt;The following view presents Softwarenaut visualizing itself but this time, augmenting the structure with evolutionary information. On top of the architectural view we have highlighted the classes that have the most activity in the recent evolution of the system (as of February 2011). One can see that it is a minority of classes that have been changing.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://cloud.githubusercontent.com/assets/464519/21022349/9ec2f748-bd7c-11e6-87ad-29c5332caba9.png&#34; alt=&#34;evolution screenshot&#34; /&gt;&lt;/p&gt;
+
+&lt;!-- ### Details About Relationship Evolution
+
+The following figure presents the evolution filmstrip for the relationship between the uml and kernel modules in ArgoUML between 2003 and 2007. Inheritance relationships are represented with red and invocation relationships are represented with black. One can see that in 2004 a reverse dependency was introduced between kernel and uml and it remained in the system until its latest analyzed version
+
+![screen-shot-2011-10-10-at-5 27 36-pm](https://cloud.githubusercontent.com/assets/464519/21023545/4c41a97e-bd81-11e6-81b1-fb038bd3b156.png)
+ --&gt;
+
+&lt;h3 id=&#34;details-about-module-evolution&#34;&gt;Details About Module Evolution&lt;/h3&gt;
+
+&lt;p&gt;There are mahy module detail views which present information about a particular module. The Module Evolution presents a compressed version of the module history. The module is represented in every analyzed version as a treemap. When a new class is introduced it is marked with yellow. When a class changes it is colored with a shade of blue which is darker for larger changes. The figure presents the history of the cognitive package in ArgoUML.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://cloud.githubusercontent.com/assets/464519/21023626/9cffc058-bd81-11e6-906f-4f62c440717a.png&#34; alt=&#34;screen-shot-2011-10-14-at-1 56 14-am&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;coping-with-the-explosion-of-information-through-filtering&#34;&gt;Coping with the explosion of information through filtering&lt;/h3&gt;
+
+&lt;p&gt;Filters help coping with the explosion of information during exploration. There are two types of filters: entity filters and relationship filters. The Filters Panel allows the user to add and remove various filters during exploration. The filters panel appears instead of the Detail Panel when no entity is selected in the Architectural View.&lt;/p&gt;
+
+&lt;p&gt;Two categories of &lt;strong&gt;entity filters&lt;/strong&gt; are:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Size Related: Filters all the modules that are under a certain threshold (Small Modules) or above a certain threshold (Large modules).&lt;/li&gt;
+&lt;li&gt;Evolution Related:&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Two categories of &lt;strong&gt;relationship filters&lt;/strong&gt; are:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Dependency Strength: they filters the relationships based on the number of low-level explicit relationships that are abstracted in the visible relationships (e.g. Weak dependencies, Strong dependencies). These are useful when starting the analysis of systems that have a large number of modules and dependencies between them.&lt;/li&gt;
+&lt;li&gt;Evolutionary: they filter relationships based on the evolution of the relationships during the lifetime of the system. Examples are: lifetime, newborn, old, new. They are available only when multiple versions of a system are loaded. They are useful for either limiting the amount of information at the first encounter with a system (e.g. lifetime) or trying to find problems (e.g. newborn combined with bidirectional).&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;a-screencast-of-softwarenaut-in-action&#34;&gt;A Screencast of Softwarenaut in Action&lt;/h3&gt;
+
+&lt;p&gt;In 2012 I prepared a screencast of the way the
+tool looked at the time. I think screencasts are very important
+for research tools since they may give ideas to new toolmakers
+long after they tool does not compile anymore :)&lt;/p&gt;
+
+&lt;iframe src=&#34;https://player.vimeo.com/video/62767181&#34; width=&#34;640&#34; height=&#34;360&#34; frameborder=&#34;0&#34; webkitallowfullscreen mozallowfullscreen allowfullscreen&gt;&lt;/iframe&gt;
+
+&lt;h3 id=&#34;further-reading&#34;&gt;Further Reading&lt;/h3&gt;
+
+&lt;p&gt;For details and case studies, see&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;the journal article that describes the tool (&lt;a href=&#34;http://scg.unibe.ch/archive/papers/Lung14a.pdf&#34;&gt;preprint pdf&lt;/a&gt;, &lt;a href=&#34;http://scg.unibe.ch/scgbib?_k=mhZxW1Pf&amp;amp;query=Lung14a&amp;amp;display=bibtex&#34;&gt;bibtex&lt;/a&gt;)&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;the conference paper that describes the way we visualized hierarchical clusterings of software systems (&lt;a href=&#34;http://scg.unibe.ch/archive/papers/Lung05aExploreSemanticClusters.pdf&#34;&gt;preprint pdf&lt;/a&gt;, &lt;a href=&#34;http://scg.unibe.ch/scgbib?_k=v0zYApEK&amp;amp;query=Lung05a&amp;amp;display=bibtex&#34;&gt;bibtex&lt;/a&gt;)&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&#34;code-and-installation&#34;&gt;Code and Installation&lt;/h3&gt;
+
+&lt;p&gt;The &lt;a href=&#34;https://github.com/mircealungu/Softwarenaut/&#34;&gt;Softwarenaut GitHub repo&lt;/a&gt; contains instructions on how to &lt;a href=&#34;https://github.com/mircealungu/Softwarenaut/blob/master/INSTALL.md&#34;&gt;obtain the code
+and install the system&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,421 @@
+<link href="https://fonts.googleapis.com/css?family=Merriweather:300,300italic,400,400italic,700,700italic" rel="stylesheet" type="text/css">
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="theme" content="hugo-academic">
+  <meta name="generator" content="Hugo 0.46" />
+  <meta name="author" content="Mircea Lungu, PhD">
+  <meta name="description" content="Associate Professor">
+
+  <link rel="stylesheet" href="/css/highlight.min.css">
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/academicons.min.css">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:400,700|Merriweather|Roboto+Mono">
+  <link rel="stylesheet" href="/css/hugo-academic.css">
+  
+
+  <link rel="alternate" href="https://mircealungu.github.io/index.xml" type="application/rss+xml" title="Mircea Lungu">
+  <link rel="feed" href="https://mircealungu.github.io/index.xml" type="application/rss+xml" title="Mircea Lungu">
+
+  <link rel="icon" type="image/png" href="/img/icon.png">
+  <link rel="apple-touch-icon" type="image/png" href="/img/apple-touch-icon.png">
+
+  <link rel="canonical" href="https://mircealungu.github.io/post/18-09-07--db-indexes/">
+
+  
+
+  <title>Using a Performance Monitor to Illustrate the Power of DB Indexes | Mircea Lungu</title>
+
+</head>
+<body id="top">
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navbar-main">
+  <div class="container">
+
+    
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+              data-target=".navbar-collapse" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">Mircea Lungu</a>
+    </div>
+
+    
+    <div class="collapse navbar-collapse" id="#navbar-collapse-1">
+
+      
+      <ul class="nav navbar-nav navbar-right">
+        
+        <li class="nav-item"><a href="/#top">About</a></li>
+        
+        <li class="nav-item"><a href="/#posts">Academic Log</a></li>
+        
+        <li class="nav-item"><a href="/#teaching">Teaching</a></li>
+        
+        <li class="nav-item"><a href="https://scholar.google.nl/citations?user=kLqXicUAAAAJ&amp;hl=en">Publications</a></li>
+        
+        <li class="nav-item"><a href="/#contact">Contact</a></li>
+        
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+
+  <article class="article" itemscope itemtype="http://schema.org/Article">
+
+    
+
+    <h1 itemprop="name">Using a Performance Monitor to Illustrate the Power of DB Indexes</h1>
+
+    
+
+<div class="article-metadata">
+
+  <span class="article-date">
+    <time datetime="2018-09-06 10:00:00 &#43;0000 UTC" itemprop="datePublished">
+      Thu, Sep 6, 2018
+    </time>
+  </span>
+
+  
+  
+  
+  <span class="article-tags">
+    <i class="fa fa-tags"></i>
+    
+    <a class="article-tag-link" href="https://mircealungu.github.io/tags/teaching">Teaching</a
+    >
+    
+  </span>
+  
+  
+
+  
+  
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    <li>
+      <a class="facebook"
+         href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fmircealungu.github.io%2fpost%2f18-09-07--db-indexes%2f"
+         target="_blank">
+        <i class="fa fa-facebook"></i>
+      </a>
+    </li>
+    <li>
+      <a class="twitter"
+         href="https://twitter.com/intent/tweet?text=Using%20a%20Performance%20Monitor%20to%20Illustrate%20the%20Power%20of%20DB%20Indexes&amp;url=https%3a%2f%2fmircealungu.github.io%2fpost%2f18-09-07--db-indexes%2f"
+         target="_blank">
+        <i class="fa fa-twitter"></i>
+      </a>
+    </li>
+    <li>
+      <a class="linkedin"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fmircealungu.github.io%2fpost%2f18-09-07--db-indexes%2f&amp;title=Using%20a%20Performance%20Monitor%20to%20Illustrate%20the%20Power%20of%20DB%20Indexes"
+         target="_blank">
+        <i class="fa fa-linkedin"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+
+  
+
+</div>
+
+
+    <div class="article-style" itemprop="articleBody">
+      
+
+<p>TL;DR;</p>
+
+<pre><code>- Database indexes are easy and powerful tools for performance enginering 
+- An internal performance monitor enables quick insights into service performance
+</code></pre>
+
+<p>&nbsp;</p>
+
+<h2 id="prologue-two-research-projects">Prologue: Two Research Projects</h2>
+
+<p>Project #1 - In <a href="http://zeeguu.org">Zeeguu</a> we research how we
+can make learning a foreign language more fun. We monitor
+a learners interactions with foreign texts and based on this
+we recommend further personalized reading and personalized
+vocabulary exercises.</p>
+
+<p>The Zeeguu web application has a classical client-server
+architecture with the backend being implemnted with Flask
+&ndash; one of the most popular web application frameworks
+for Python.</p>
+
+<p>Project #2: The <a href="https://github.com/flask-dashboard/Flask-MonitoringDashboard/">Flask Monitoring Dashboard</a>
+(FMD) is an advanced internal monitor that tracks the evolution of
+performance and utilization of web applications. It can
+be deployed with near zero effort for Flask-based apps
+and APIs. The main developers of the FMD are Bogdan Petre and
+Patrick Vogel, two of my past master students in Groningen.</p>
+
+<p>In the long tradition of <em>eating your own dogfood</em>
+the FMD is used to monitor the performance evolution
+of the Zeeguu API.</p>
+
+<p>&nbsp;</p>
+
+<h2 id="context-why-computing-reading-sessions-is-not-so-easy">Context: Why Computing Reading Sessions Is Not So Easy</h2>
+
+<p>Zeeguu contains a module that computes the length of user reading sessions, which are periods of time in which a reader is focused while reading a text.</p>
+
+<p>Computing reading sessions is not easy, because users might be reading an article
+and then leave it open while chatting with their friends on WhatsApp
+or maybe <em>crushing it</em> at Candy Crush.
+Trying to predict when the user stopped paying attention requires
+complicated heuristics that
+are based all the actions that a user performed while interacting
+with a text.</p>
+
+<p>The Screenshot bellow is from the Zeeguu web app and
+shows the reading sessions that were inferred
+based on my interactions with the reader yesterday and today.</p>
+
+<p>If you look at the article titles. you see that today I read two
+French articles and yesterday I read a German one.</p>
+
+<p>If you look at the session lengths,you see that this morning I was
+not very focused: it took me multiple focused sessions to read
+the article about the Coca Cola bottle size&hellip; might be a problem
+with my attention span, but might also be a problem with the
+interestingness of the article&hellip;</p>
+
+<p><img src=/img/db-indexes-1.png style="border: 1px solid #ccddcc; padding: 6px; margin: 36px; margin-left: auto; margin-right: auto;" /></p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<h2 id="the-first-step-towards-solution-is-admitting-you-have-a-problem">The First Step Towards Solution is Admitting You Have a Problem</h2>
+
+<p>&nbsp;</p>
+
+<p>This morning I realized that this endpoint which provides the information
+about the user sessions to the front-end web application is as slow as this sloth:</p>
+
+<p><img src=/img/sloth.gif style="border: 1px solid #ccddcc; padding: 6px; margin: 36px; margin-left: auto; margin-right: auto;" /></p>
+
+<p>Remember that I told you that FMD is alredy deployed with the Zeeguu API.</p>
+
+<p>Thus, to find out why is the endpoint so slow, I opened the FMD dashboard and enabled the Profiler for the
+ endpoint. When the profiler is enabled, for every
+call to the endpoint the FMD samples continuously the Python
+call stack in such a way that it can present where the time
+is being spent during the computations associated with the endpoint.</p>
+
+<p>After enabling the profiler for the endpoint, I made sure to call
+the endpoint one more time. Then I went to the Profiler tab  to discover the information presented in the following figure which shows the time spent every one of the
+code lines that are being called from the endpoint.</p>
+
+<p><img src=/img/db-indexes-2.png style="border: 1px solid #ccddcc; margin: 0 auto; padding: 0 20; width: 100%; " /></p>
+
+<p>&nbsp;</p>
+
+<p>The first line shows us that the endpoint was computing stuff for 43 seconds!</p>
+
+<p>The last line shows that 98% of the the 43 seconds is spent
+in the following code (which is not fully visible in the image):</p>
+
+<p>&nbsp;</p>
+
+<pre><code>cls.query.filter(UserActivityData.time &lt; self.last_action_time).all()
+</code></pre>
+
+<p>&nbsp;</p>
+
+<p>This is Python code that uses SQLAlchemy.
+Sqlalchemy is  a very powerful ORM which will convert this Python code to SQL and
+send the correponding queries to MySQL. At least in theory
+we do not need to know MySQL if we use SQLAlchemy. (But
+because of something that Joel Spolsky calls <a href="https://www.joelonsoftware.com/2002/11/11/the-law-of-leaky-abstractions/">the law of
+leaky abstractions</a>,
+most of the times we still need to understand some SQL anyway&hellip; )</p>
+
+<p>So we now know that the slowness of our endpoint is due to the SQL query
+that is generated by the SQLAlchemy code in the above-mentioned
+line. And we also know that, due to the SQLAlchemy naming conventions,
+the very slow SQL query must work with the <code>user_activity_data</code> table
+and its <code>time</code> column (this is given away by the <code>UserActivityData.time</code> part of the
+code above).</p>
+
+<p>Looking at the table structure
+in the database and at the session computation algorithm we
+observe two things:</p>
+
+<ul>
+<li>the table has not been designed with the session computation
+algorithm in mind, and the algorithm iterates many times through
+all the table rows</li>
+<li>the <code>user_activity_data</code> table is a very large table with
+hundreds of thousands of records</li>
+</ul>
+
+<h1 id="fixing-the-problem-without-touching-the-algorithm">Fixing the Problem Without Touching the Algorithm</h1>
+
+<p>The first thing that comes to my mind is a recent discussion with
+my sister about DB indexes and how they are very powerful performance tools. So I&rsquo;m thinking, maybe
+this is an opportunity to show with a case study the
+impact of an index.</p>
+
+<p>I thus go to the database and I add a new index that is
+inspired by the <code>UserActivityData.time</code> that appears
+in the very slow code line above:</p>
+
+<p>&nbsp;</p>
+
+<pre><code>CREATE INDEX index_uadtime ON user_activity_data(time)
+</code></pre>
+
+<p>&nbsp;</p>
+
+<p>This will make MySQL create additional internal structures
+that will allow it to optimize queries that involve
+in their condition the <code>user_activity_data</code>
+table and the <code>time</code> column.</p>
+
+<p>I redeploy the API, request again the endpoint
+and then I visit again the Profiler page, and lo and behold!
+Instead of 43 seconds now my endpoint takes 1.6 seconds.</p>
+
+<p><img src=/img/db-indexes-3.png style="border: 1px solid #ccddcc; margin: 0 auto; padding: 0 20; width: 100%; " /></p>
+
+<p>I now have a nice example to show to my sister about
+the huge impact indexes have on database performance.</p>
+
+<p>&nbsp;</p>
+
+<h1 id="the-morales-of-this-story">The Morales of this Story</h1>
+
+<p><strong>For the Beginner:</strong> Indexes are very important for
+the performance of your database. Also, profiling
+the performance of your code is a skill you will have
+to learn. The FMD is a good starting point if you
+are a Flask developer.</p>
+
+<p><strong>For the Advanced:</strong> An internal monitor for your
+API can be a wonderful and much faster way of getting
+insight into the workings of your service. Sure, you
+can also deploy a profiler from your development
+environment, but having the profiler available to be
+deployed in production with a single click has the
+huge advantage of you getting information about the
+<strong>real</strong> data.</p>
+
+<p><strong>For the Flask/Python Developer:</strong> FMD is an awesome
+tool. So grab it while it&rsquo;s still
+a research project and is free. In exchange we might
+ask you some questions at some point. But hey, that&rsquo;s
+nothing for the easy insights you get with it.</p>
+
+<h1 id="references">References</h1>
+
+<ul>
+<li>Zeeguu &ndash; <a href="https://www.researchgate.net/publication/322489283_As_We_May_Study_Towards_the_Web_as_a_Personalized_Language_Textbook">scientific paper</a>, <a href="https://zeeguu.org">website</a></li>
+<li>FMD &ndash; <a href="https://github.com/flask-dashboard/Vissoft-17-Paper/blob/master/FlaskDashboard-Preprint.pdf">paper</a>, <a href="https://github.com/flask-dashboard/Flask-MonitoringDashboard/">website</a></li>
+</ul>
+
+    </div>
+
+  </article>
+
+  <nav>
+  <ul class="pager">
+    
+    <li class="previous"><a href="https://mircealungu.github.io/post/18-07-01--started-at-itu/"><span
+      aria-hidden="true">&larr;</span> Starting as Associate at IT University in Copenhagen</a></li>
+    
+
+    
+  </ul>
+</nav>
+
+  
+
+
+</div>
+<footer class="site-footer">
+  <div class="container">
+    <p class="powered-by">
+
+      &copy; 2016 Mircea F Lungu &middot; 
+
+      Powered by the <a href="https://github.com/gcushen/hugo-academic" target="_blank">Academic
+      theme</a> for <a href="http://gohugo.io" target="_blank">Hugo</a>.
+
+      <span class="pull-right" aria-hidden="true">
+        <a href="#" id="back_to_top">
+          <span class="button_icon">
+            <i class="fa fa-chevron-up fa-2x"></i>
+          </span>
+        </a>
+      </span>
+
+    </p>
+  </div>
+</footer>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.4/TweenMax.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/ScrollToPlugin.min.js"></script>
+    <script src="/js/jquery-1.12.3.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/hugo-academic.js"></script>
+    
+
+    
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-89557275-1', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+
+    
+    <script>
+        (function(h,o,t,j,a,r){
+            h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+            h._hjSettings={hjid:377989,hjsv:5};
+            a=o.getElementsByTagName('head')[0];
+            r=o.createElement('script');r.async=1;
+            r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+            a.appendChild(r);
+        })(window,document,'//static.hotjar.com/c/hotjar-','.js?sv=');
+    </script>
+
+
+    
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    
+    
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });
+    </script>
+    <script async src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML"></script>
+    
+
+  </body>
+</html>
+

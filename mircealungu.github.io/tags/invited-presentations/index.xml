@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Invited Presentations on Mircea Lungu</title>
+    <link>https://mircealungu.github.io/tags/invited-presentations/</link>
+    <description>Recent content in Invited Presentations on Mircea Lungu</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2016 Mircea F Lungu</copyright>
+    <lastBuildDate>Fri, 20 Jan 2017 12:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://mircealungu.github.io/tags/invited-presentations/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Invited Talk at the SEN Symposium</title>
+      <link>https://mircealungu.github.io/post/17-01-20--sen-symposium-talk/</link>
+      <pubDate>Fri, 20 Jan 2017 12:00:00 +0000</pubDate>
+      
+      <guid>https://mircealungu.github.io/post/17-01-20--sen-symposium-talk/</guid>
+      <description>The SEN symposium in Amsterdam is a yearly event that gathers software engineering researchers and practitioners. This year I was invited to give a talk along several great speakers including: Felienne Hermans, Andreas Zeller, Marielle Stoelinga, and Hans Wanders the CIO (!) of the Netherlands.
+
+I started my talk observing that Google, Facebook, and Twitter are using context in order to provide us with the best&amp;hellip; ads! I then argued that in software analytics we can use context in order to create more powerful tools and analyses.</description>
+    </item>
+    
+    <item>
+      <title>Keynote at Smalltalks in Argentina</title>
+      <link>https://mircealungu.github.io/post/12-11-11-keynote-smalltalks-argentina/</link>
+      <pubDate>Tue, 20 Nov 2012 12:00:00 +0000</pubDate>
+      
+      <guid>https://mircealungu.github.io/post/12-11-11-keynote-smalltalks-argentina/</guid>
+      <description>I was invited to give a keynote at Smalltalks in Argentina. Before the conference I spent some time with students at the University of Buenos Aires with Gabriela Arevallo and the other organizers of the conference. The conference was great. The argentinian Smalltalk community is extremely welcoming and passionate. I look forward to going back one day.</description>
+    </item>
+    
+  </channel>
+</rss>

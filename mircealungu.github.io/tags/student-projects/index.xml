@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Student Projects on Mircea Lungu</title>
+    <link>https://mircealungu.github.io/tags/student-projects/</link>
+    <description>Recent content in Student Projects on Mircea Lungu</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2016 Mircea F Lungu</copyright>
+    <lastBuildDate>Wed, 20 Nov 2013 12:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://mircealungu.github.io/tags/student-projects/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>📝 Mapping the Open Information Economy</title>
+      <link>https://mircealungu.github.io/post/13-09-01-visualizing-stack-overflow/</link>
+      <pubDate>Wed, 20 Nov 2013 12:00:00 +0000</pubDate>
+      
+      <guid>https://mircealungu.github.io/post/13-09-01-visualizing-stack-overflow/</guid>
+      <description>&amp;ldquo;A nobel prize is waiting for the one who visualizes the economy of information&amp;rdquo; (Steward Brand, The Media Lab)
+One of my current travelling companions is “The Media Lab – Inventing the Future at MIT” by Steward Brand. Like several other books about the history of computing in the 80s, this one is also fascinating and it shows again how much ahead of their time were people in those years… and how we are still reaping the ideas that they saw.</description>
+    </item>
+    
+  </channel>
+</rss>

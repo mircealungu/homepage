@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Papers on Mircea Lungu</title>
+    <link>https://mircealungu.github.io/tags/papers/</link>
+    <description>Recent content in Papers on Mircea Lungu</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2016 Mircea F Lungu</copyright>
+    <lastBuildDate>Thu, 19 Jan 2017 12:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://mircealungu.github.io/tags/papers/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>📝 Analysis Bots</title>
+      <link>https://mircealungu.github.io/post/17-01-19-analysis-bots/</link>
+      <pubDate>Thu, 19 Jan 2017 12:00:00 +0000</pubDate>
+      
+      <guid>https://mircealungu.github.io/post/17-01-19-analysis-bots/</guid>
+      <description>The Story Our paper on analysis bots has been accepted to the ICSE ERA track. The paper is co-written with Ivan Bestchastnick from University of British Columbia and Yanyan Zhuang from the University of Colorado.
+The paper is written from the perspective of software engineering researchers and for a software engineering audience. It argues that we must implement a platform where analysis bots compete to provide the most meaningful analysis results to practitioners.</description>
+    </item>
+    
+    <item>
+      <title>📝 Polite Programmers, Use Sentence Case</title>
+      <link>https://mircealungu.github.io/post/16-11-20-polite-smalltalk-at-nool/</link>
+      <pubDate>Sun, 20 Nov 2016 12:00:00 +0000</pubDate>
+      
+      <guid>https://mircealungu.github.io/post/16-11-20-polite-smalltalk-at-nool/</guid>
+      <description>The programming languages reseachers have a healthy sense of humor. The -1th edition of the NOOL (New Object Oriented Languages) Workshop had a very creative call for papers. To keep up with the state of affairs, Jan Kurs and I submitted a paper with a most concise abstract:
+ JavaProgrammersUseCamelCaseToSeparateWordsInIdentifiers.  Pythonistas_and_others_use_underscore_in_their_identifiers.  Polite programmers can use spaces if they like.
+ The paper presents briefly some of the design decisions that went into Polite, our evolutionary mutation of Smalltalk that brings the language closer to natural language.</description>
+    </item>
+    
+    <item>
+      <title>📝 Ubiquitous Monitoring Ecosystems</title>
+      <link>https://mircealungu.github.io/post/16-09-20-bootstrapping-an-ubiquitous-ecosystem/</link>
+      <pubDate>Tue, 20 Sep 2016 12:00:00 +0000</pubDate>
+      
+      <guid>https://mircealungu.github.io/post/16-09-20-bootstrapping-an-ubiquitous-ecosystem/</guid>
+      <description>The Story I wrote a paper for the Ecosystem Architectures event (WEA&amp;rsquo;16) about the design of an ecosystem of applications which monitor a learner&amp;rsquo;s interactions with knowledge.
+ &amp;ldquo;An unconventional idea for an ecosystem, which shows well that there are many more opportunities to benefit from the ecosystem idea, than the various industrial applications. The concrete examples of the platform and the applications make the ideas tangible and well understandable.</description>
+    </item>
+    
+    <item>
+      <title>📝 Evolutionary and Collaborative Software Architecture Recovery </title>
+      <link>https://mircealungu.github.io/post/14-01-01-evolutionary-and-collaborative-software-architecture-recovery/</link>
+      <pubDate>Wed, 01 Jan 2014 12:00:00 +0000</pubDate>
+      
+      <guid>https://mircealungu.github.io/post/14-01-01-evolutionary-and-collaborative-software-architecture-recovery/</guid>
+      <description>Our work on Softwarenaut has finally been published in the Science of Computer Programming. The paper (pdf, bibtex,citations) introduces Softwarenaut, a visual, interactive architecture recovery tool which leverages evolutionary analysis to support source code understanding.
+This page contains a very high level description of the tool. For details and case studies, see
+ the journal article that describes the tool (preprint pdf, bibtex)
+ the conference paper that describes the way we visualized hierarchical clusterings of software systems (preprint pdf, bibtex)</description>
+    </item>
+    
+    <item>
+      <title>📝 Mapping the Open Information Economy</title>
+      <link>https://mircealungu.github.io/post/13-09-01-visualizing-stack-overflow/</link>
+      <pubDate>Wed, 20 Nov 2013 12:00:00 +0000</pubDate>
+      
+      <guid>https://mircealungu.github.io/post/13-09-01-visualizing-stack-overflow/</guid>
+      <description>&amp;ldquo;A nobel prize is waiting for the one who visualizes the economy of information&amp;rdquo; (Steward Brand, The Media Lab)
+One of my current travelling companions is “The Media Lab – Inventing the Future at MIT” by Steward Brand. Like several other books about the history of computing in the 80s, this one is also fascinating and it shows again how much ahead of their time were people in those years… and how we are still reaping the ideas that they saw.</description>
+    </item>
+    
+  </channel>
+</rss>

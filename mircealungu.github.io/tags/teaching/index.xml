@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Teaching on Mircea Lungu</title>
+    <link>https://mircealungu.github.io/tags/teaching/</link>
+    <description>Recent content in Teaching on Mircea Lungu</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2016 Mircea F Lungu</copyright>
+    <lastBuildDate>Thu, 06 Sep 2018 10:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://mircealungu.github.io/tags/teaching/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Using a Performance Monitor to Illustrate the Power of DB Indexes</title>
+      <link>https://mircealungu.github.io/post/18-09-07--db-indexes/</link>
+      <pubDate>Thu, 06 Sep 2018 10:00:00 +0000</pubDate>
+      
+      <guid>https://mircealungu.github.io/post/18-09-07--db-indexes/</guid>
+      <description>TL;DR;
+- Database indexes are easy and powerful tools for performance enginering - An internal performance monitor enables quick insights into service performance  &amp;nbsp;
+Prologue: Two Research Projects Project #1 - In Zeeguu we research how we can make learning a foreign language more fun. We monitor a learners interactions with foreign texts and based on this we recommend further personalized reading and personalized vocabulary exercises.
+The Zeeguu web application has a classical client-server architecture with the backend being implemnted with Flask &amp;ndash; one of the most popular web application frameworks for Python.</description>
+    </item>
+    
+    <item>
+      <title>Starting as Associate at IT University in Copenhagen</title>
+      <link>https://mircealungu.github.io/post/18-07-01--started-at-itu/</link>
+      <pubDate>Sun, 01 Jul 2018 12:00:00 +0000</pubDate>
+      
+      <guid>https://mircealungu.github.io/post/18-07-01--started-at-itu/</guid>
+      <description>I am glad to announce that I have started as Associate Professor at the IT University in Copenhagen. I will be teaching Software Architecture, Technical Interaction Desgin, and Advanced Software Engineering. I will also be continuing my work on software evolution, software ecosystems, and using technology to enhance personalized learning. The building looks amazing. The colleagues are diverse and telented. And the city is as bike-friendly as Groningen was. I have a feeling that is &amp;ldquo;the beginning of a beautiful friendship&amp;rdquo; :)</description>
+    </item>
+    
+    <item>
+      <title>🎉 Nominated for the Teacher of the Year Award</title>
+      <link>https://mircealungu.github.io/post/16-11-20-teacher-of-the-year/</link>
+      <pubDate>Mon, 21 Nov 2016 12:00:00 +0000</pubDate>
+      
+      <guid>https://mircealungu.github.io/post/16-11-20-teacher-of-the-year/</guid>
+      <description>I have been nominated for the teacher of the year award! Especially after seeing all the other nominations I started feeling like I don&amp;rsquo;t deserve the honor. However, it is also true that together with my team, we put a lot of effort in coming up with cool project ideas and running them in the timespan of five months.
+Thus, many thanks and congratulations for my teaching assistants: Laura Baakman, Jeroen Brandsma, Georgios Digkas, Sybren Gjaltema, Jelle van Wezel, Angelo Karountzos, Alexander Lukjanenkovs.</description>
+    </item>
+    
+    <item>
+      <title>New Course: Introduction to Data Science</title>
+      <link>https://mircealungu.github.io/post/16-11-16-introduction-to-data-science-course/</link>
+      <pubDate>Wed, 16 Nov 2016 12:00:00 +0000</pubDate>
+      
+      <guid>https://mircealungu.github.io/post/16-11-16-introduction-to-data-science-course/</guid>
+      <description>Today, with Kerstin Bunte, we are starting our new course on Introduction to Data Science. This will be interesting: we have 60 first year master students from computer science, astronomy, and mathematics. What do they have in common? What topics can we cover such that most of them can benefit? Which topics are not too easy nor too challenging? We&amp;rsquo;ll see!</description>
+    </item>
+    
+  </channel>
+</rss>

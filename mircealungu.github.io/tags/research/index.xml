@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Research on Mircea Lungu</title>
+    <link>https://mircealungu.github.io/tags/research/</link>
+    <description>Recent content in Research on Mircea Lungu</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2016 Mircea F Lungu</copyright>
+    <lastBuildDate>Sun, 01 Jul 2018 12:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://mircealungu.github.io/tags/research/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Starting as Associate at IT University in Copenhagen</title>
+      <link>https://mircealungu.github.io/post/18-07-01--started-at-itu/</link>
+      <pubDate>Sun, 01 Jul 2018 12:00:00 +0000</pubDate>
+      
+      <guid>https://mircealungu.github.io/post/18-07-01--started-at-itu/</guid>
+      <description>I am glad to announce that I have started as Associate Professor at the IT University in Copenhagen. I will be teaching Software Architecture, Technical Interaction Desgin, and Advanced Software Engineering. I will also be continuing my work on software evolution, software ecosystems, and using technology to enhance personalized learning. The building looks amazing. The colleagues are diverse and telented. And the city is as bike-friendly as Groningen was. I have a feeling that is &amp;ldquo;the beginning of a beautiful friendship&amp;rdquo; :)</description>
+    </item>
+    
+  </channel>
+</rss>
