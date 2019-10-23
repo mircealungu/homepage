@@ -2,7 +2,7 @@
 date = "2018-09-06T10:00:00"
 draft = false
 tags = ["Teaching"]
-title = "Using a Performance Monitor to Illustrate the Power of DB Indexes"
+title = "Using a Performance Monitor to Illustrate the Importance of Database Indexes"
 math = true
 summary = """
 
