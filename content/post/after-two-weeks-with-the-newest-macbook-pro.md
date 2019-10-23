@@ -34,7 +34,7 @@ wanted a second mini-screen - one is enough.
 terribly frustrating. it's like something is really
 missing there. however, os x allows you to remap the
 caps-lock key to esc, and in a few days it becomes
-second nature. good by esc key. i predict you'll be
+second nature. good bye esc key. i predict you'll be
 reincarnated in a wider key in the next generations 
 of keyboards.
 - raw processor speed. based on my own fibonacci benchmark

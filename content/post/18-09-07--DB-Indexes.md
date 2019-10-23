@@ -38,7 +38,7 @@ vocabulary exercises.
 
 
 **Project #2** -- The [Flask Monitoring Dashboard](https://github.com/flask-dashboard/Flask-MonitoringDashboard/) 
-(FMD) is an advanced internal monitor that tracks the evolution of 
+(hereafter abbreviatred as FMD) is an advanced internal monitor that tracks the evolution of 
 performance and utilization of web applications. It can 
 be **deployed with one line of code** in Flask-based apps
 and APIs. 
