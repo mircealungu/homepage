@@ -6,7 +6,7 @@ title = "Using a Performance Monitor to Illustrate the Power of DB Indexes"
 math = true
 summary = """
 
-	This is a case study in which i show two things that might be useful for junior and senior software engineers alike: 
+	This is a case study / story in which i highlight two things that might be useful for junior and even more advanced software engineers alike: 
 
 	- An internal performance monitor enables quick analysis of service performance
 	- Database indexes are easy and powerful tools for performance enginering 
