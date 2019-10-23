@@ -119,10 +119,10 @@ As mentioned before, the FMD is already deployed in the
 Zeeguu API and all we need to do is to enable **profiling**
 from its user interface. 
 
-When the profiler is enabled, for every
-call to the endpoint the FMD samples continuously the Python
-call stack in such a way that it can present where the time
-is being spent during the computations associated with the endpoint.
+When the profiler is enabled for an endpoint, for every
+call to that endpoint the FMD samples continuously the Python
+call stack such that it can present information about the 
+lines of code where the most time was being spent.
 
 We thus enable the profiler for `user_article_history`, make sure to call
 the endpoint one more time, then open the Profiler tab in FMD to discover 
