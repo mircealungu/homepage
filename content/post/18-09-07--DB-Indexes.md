@@ -100,7 +100,8 @@ reading with my other morning routines.
 
 However, today I realized that there is a big problem with 
 displaying of information about the user sessions in 
-the Zeeguu web app is very very slow; it feels as slow as this:
+the Zeeguu web app; it is very very slow. In fact it feels 
+as slow as this:
 
 <img src=/img/sloth.gif style="border: 1px solid #ccddcc; padding: 6px; margin: 36px; margin-left: auto; margin-right: auto;" />
 
