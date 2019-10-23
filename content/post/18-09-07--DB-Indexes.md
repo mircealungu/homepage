@@ -81,7 +81,7 @@ If you look at the article titles. you see that today I read two
 French articles and yesterday I read a German one.
 
 If you look at the session lengths, you see that this morning I was
-not very focused: it took me multiple focused sessions to read 
+not very focused: it took me multiple sessions to read 
 the article about the Coca Cola bottle size. It seems that I was
 not very focused on this article this morning, but rather interleaved
 reading with my other morning routines. 
