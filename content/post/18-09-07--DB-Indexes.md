@@ -46,7 +46,7 @@ The main developers of the FMD are Bogdan Petre and
 Patrick Vogel, two of my past master students in Groningen. 
 
 
-In the long tradition of *eating your own dogfood* 
+In the long tradition of *eating your own dog food* 
 the FMD is used to monitor the performance evolution
 of the Zeeguu API. 
 
