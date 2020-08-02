@@ -36,9 +36,9 @@ weight = 10
 ### Bio
 
 
-Mircea Lungu is associate professor in the Computer Science department at [ITU Copenhagen](https://en.itu.dk/research). 
+Mircea is associate professor in CS at the [IT University of Copenhagen](https://en.itu.dk/research). 
 
-Before coming to Denmark Mircea was assistant professor in Computer Science at the [Faculty of Science and Engineering](http://www.rug.nl/research/fmns/?lang=en) of [University of Groningen](http://www.rug.nl/) where he was a member of the [SEARCH](http://www.cs.rug.nl/search/) team and also me in the [DSSC](http://www.rug.nl/research/fmns/themes/dssc/) pioneers group. He was also part time visiting researcher in the [SWAT](https://www.cwi.nl/research-groups/software-analysis-and-transformation) group at CWI in Amsterdam, a postdoc at the [University of Bern](http://scg.unibe.ch/), and a co-op researcher at [IBM TJ Watson Research Center](http://www.watson.ibm.com/index.shtml). He got his PhD working with [Michele Lanza](http://www.inf.usi.ch/lanza/) at the [University of Lugano](http://www.inf.usi.ch/), in Switzerland.
+Before coming to Denmark he was assistant professor at the [Faculty of Science and Engineering](http://www.rug.nl/research/fmns/?lang=en) of [University of Groningen](http://www.rug.nl/) where he was a member of the [SEARCH](http://www.cs.rug.nl/search/) research group and the [Data Science Pioneers](http://www.rug.nl/research/fmns/themes/dssc/) group. He was also part time visiting researcher in the [SWAT](https://www.cwi.nl/research-groups/software-analysis-and-transformation) group at CWI in Amsterdam, a postdoc at the [University of Bern](http://scg.unibe.ch/), and a co-op researcher at [IBM TJ Watson Research Center](http://www.watson.ibm.com/index.shtml) in New York. He got his PhD working with [Michele Lanza](http://www.inf.usi.ch/lanza/) and the REVEAL research group at the [University of Lugano](http://www.inf.usi.ch/), in Switzerland.
 
 
 
@@ -74,5 +74,6 @@ Before coming to Denmark Mircea was assistant professor in Computer Science at t
 4. Personalized Learning 
 
 
-If you are looking for a thesis see my [student projects](https://github.com/mircealungu/student-projects) info on GitHub. 
+### Student Projects
+If you are a student, looking for a thesis see my [student projects](https://github.com/mircealungu/student-projects) info on GitHub. 
 
