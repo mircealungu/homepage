@@ -3,14 +3,11 @@ date = "2018-09-06T10:00:00"
 draft = false
 tags = ["Teaching"]
 title = "Using a Performance Monitor to Illustrate the Importance of Database Indexes"
-math = true
 summary = """
+This is a case study / story in which i highlight two things that might be useful for junior and even more advanced software engineers alike: 
 
-	This is a case study / story in which i highlight two things that might be useful for junior and even more advanced software engineers alike: 
-
-	- An internal performance monitor enables quick analysis of service performance
-	- Database indexes are easy and powerful tools for performance enginering 
-
+- An internal performance monitor enables quick analysis of service performance
+- Database indexes are easy and powerful tools for performance enginering 
 """
 
 +++
