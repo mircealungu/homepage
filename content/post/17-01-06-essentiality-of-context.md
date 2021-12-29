@@ -1,6 +1,6 @@
 +++
 date = "2017-01-06T12:00:00"
-draft = false
+draft = true
 tags = []
 title = "Three Types of Context in Software Analytics"
 math = true

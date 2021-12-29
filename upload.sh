@@ -1,5 +1,5 @@
 #!/bin/bash
-TARGET_FOLDER=../mircealungu.github.io
+TARGET_FOLDER=./mircealungu.github.io
 
 rm -rf '$TARGET_FOLDER/*'
 hugo -d $TARGET_FOLDER

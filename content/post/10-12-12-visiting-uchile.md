@@ -1,0 +1,11 @@
++++
+date = "2010-12-12T12:00:00"
+draft = false
+tags = ["Teaching"]
+title = "Visiting Researcher at University of Chile"
+math = true
+summary = """
+"""
++++
+
+Between mid-november and mid-december I have been visiting researcher at the PLEIAD Lab at the University of Chile. I gave a master lecture, talked to various people including Romain Robbes, Eric Tanter, Alex Bergel, Johan Fabry, and closely worked with Romain Robbes with whom we submitted a paper to ICSE NIER. A pleasant and productive time!
